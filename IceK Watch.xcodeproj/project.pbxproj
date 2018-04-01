@@ -14,6 +14,9 @@
 		884925172071616E008DD39F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884925152071616E008DD39F /* LaunchScreen.storyboard */; };
 		884925222071616E008DD39F /* IceK_WatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884925212071616E008DD39F /* IceK_WatchTests.swift */; };
 		8849252D2071616E008DD39F /* IceK_WatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849252C2071616E008DD39F /* IceK_WatchUITests.swift */; };
+		8849253E207162BE008DD39F /* ListMoviesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849253D207162BE008DD39F /* ListMoviesView.xib */; };
+		88492540207162DA008DD39F /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849253F207162DA008DD39F /* PlayerView.xib */; };
+		88492542207162F0008DD39F /* MovieDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88492541207162F0008DD39F /* MovieDetailsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		884925282071616E008DD39F /* IceK WatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IceK WatchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8849252C2071616E008DD39F /* IceK_WatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceK_WatchUITests.swift; sourceTree = "<group>"; };
 		8849252E2071616E008DD39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8849253D207162BE008DD39F /* ListMoviesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMoviesView.xib; sourceTree = "<group>"; };
+		8849253F207162DA008DD39F /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		88492541207162F0008DD39F /* MovieDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 		8849250B2071616E008DD39F /* IceK Watch */ = {
 			isa = PBXGroup;
 			children = (
+				88492543207162FF008DD39F /* Controllers */,
+				8849253A207161D0008DD39F /* Views */,
 				8849250C2071616E008DD39F /* AppDelegate.swift */,
 				8849250E2071616E008DD39F /* ViewController.swift */,
 				884925102071616E008DD39F /* Main.storyboard */,
@@ -123,6 +131,23 @@
 				8849252E2071616E008DD39F /* Info.plist */,
 			);
 			path = "IceK WatchUITests";
+			sourceTree = "<group>";
+		};
+		8849253A207161D0008DD39F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8849253D207162BE008DD39F /* ListMoviesView.xib */,
+				8849253F207162DA008DD39F /* PlayerView.xib */,
+				88492541207162F0008DD39F /* MovieDetailsView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88492543207162FF008DD39F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +260,9 @@
 				884925172071616E008DD39F /* LaunchScreen.storyboard in Resources */,
 				884925142071616E008DD39F /* Assets.xcassets in Resources */,
 				884925122071616E008DD39F /* Main.storyboard in Resources */,
+				8849253E207162BE008DD39F /* ListMoviesView.xib in Resources */,
+				88492542207162F0008DD39F /* MovieDetailsView.xib in Resources */,
+				88492540207162DA008DD39F /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
