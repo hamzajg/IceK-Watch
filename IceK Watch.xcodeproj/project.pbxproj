@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8849250D2071616E008DD39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250C2071616E008DD39F /* AppDelegate.swift */; };
+		8849250F2071616E008DD39F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250E2071616E008DD39F /* ViewController.swift */; };
+		884925122071616E008DD39F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884925102071616E008DD39F /* Main.storyboard */; };
+		884925142071616E008DD39F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884925132071616E008DD39F /* Assets.xcassets */; };
+		884925172071616E008DD39F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884925152071616E008DD39F /* LaunchScreen.storyboard */; };
+		884925222071616E008DD39F /* IceK_WatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884925212071616E008DD39F /* IceK_WatchTests.swift */; };
+		8849252D2071616E008DD39F /* IceK_WatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849252C2071616E008DD39F /* IceK_WatchUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8849251E2071616E008DD39F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 884925012071616E008DD39F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 884925082071616E008DD39F;
+			remoteInfo = "IceK Watch";
+		};
+		884925292071616E008DD39F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 884925012071616E008DD39F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 884925082071616E008DD39F;
+			remoteInfo = "IceK Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		884925092071616E008DD39F /* IceK Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IceK Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8849250C2071616E008DD39F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8849250E2071616E008DD39F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		884925112071616E008DD39F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		884925132071616E008DD39F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		884925162071616E008DD39F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		884925182071616E008DD39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8849251D2071616E008DD39F /* IceK WatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IceK WatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		884925212071616E008DD39F /* IceK_WatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceK_WatchTests.swift; sourceTree = "<group>"; };
+		884925232071616E008DD39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		884925282071616E008DD39F /* IceK WatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IceK WatchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8849252C2071616E008DD39F /* IceK_WatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceK_WatchUITests.swift; sourceTree = "<group>"; };
+		8849252E2071616E008DD39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		884925062071616E008DD39F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8849251A2071616E008DD39F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		884925252071616E008DD39F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		884925002071616E008DD39F = {
+			isa = PBXGroup;
+			children = (
+				8849250B2071616E008DD39F /* IceK Watch */,
+				884925202071616E008DD39F /* IceK WatchTests */,
+				8849252B2071616E008DD39F /* IceK WatchUITests */,
+				8849250A2071616E008DD39F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8849250A2071616E008DD39F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				884925092071616E008DD39F /* IceK Watch.app */,
+				8849251D2071616E008DD39F /* IceK WatchTests.xctest */,
+				884925282071616E008DD39F /* IceK WatchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8849250B2071616E008DD39F /* IceK Watch */ = {
+			isa = PBXGroup;
+			children = (
+				8849250C2071616E008DD39F /* AppDelegate.swift */,
+				8849250E2071616E008DD39F /* ViewController.swift */,
+				884925102071616E008DD39F /* Main.storyboard */,
+				884925132071616E008DD39F /* Assets.xcassets */,
+				884925152071616E008DD39F /* LaunchScreen.storyboard */,
+				884925182071616E008DD39F /* Info.plist */,
+			);
+			path = "IceK Watch";
+			sourceTree = "<group>";
+		};
+		884925202071616E008DD39F /* IceK WatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				884925212071616E008DD39F /* IceK_WatchTests.swift */,
+				884925232071616E008DD39F /* Info.plist */,
+			);
+			path = "IceK WatchTests";
+			sourceTree = "<group>";
+		};
+		8849252B2071616E008DD39F /* IceK WatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8849252C2071616E008DD39F /* IceK_WatchUITests.swift */,
+				8849252E2071616E008DD39F /* Info.plist */,
+			);
+			path = "IceK WatchUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		884925082071616E008DD39F /* IceK Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 884925312071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK Watch" */;
+			buildPhases = (
+				884925052071616E008DD39F /* Sources */,
+				884925062071616E008DD39F /* Frameworks */,
+				884925072071616E008DD39F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IceK Watch";
+			productName = "IceK Watch";
+			productReference = 884925092071616E008DD39F /* IceK Watch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8849251C2071616E008DD39F /* IceK WatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 884925342071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK WatchTests" */;
+			buildPhases = (
+				884925192071616E008DD39F /* Sources */,
+				8849251A2071616E008DD39F /* Frameworks */,
+				8849251B2071616E008DD39F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8849251F2071616E008DD39F /* PBXTargetDependency */,
+			);
+			name = "IceK WatchTests";
+			productName = "IceK WatchTests";
+			productReference = 8849251D2071616E008DD39F /* IceK WatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		884925272071616E008DD39F /* IceK WatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 884925372071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK WatchUITests" */;
+			buildPhases = (
+				884925242071616E008DD39F /* Sources */,
+				884925252071616E008DD39F /* Frameworks */,
+				884925262071616E008DD39F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8849252A2071616E008DD39F /* PBXTargetDependency */,
+			);
+			name = "IceK WatchUITests";
+			productName = "IceK WatchUITests";
+			productReference = 884925282071616E008DD39F /* IceK WatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		884925012071616E008DD39F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Hamza JGUERIM";
+				TargetAttributes = {
+					884925082071616E008DD39F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					8849251C2071616E008DD39F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 884925082071616E008DD39F;
+					};
+					884925272071616E008DD39F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 884925082071616E008DD39F;
+					};
+				};
+			};
+			buildConfigurationList = 884925042071616E008DD39F /* Build configuration list for PBXProject "IceK Watch" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 884925002071616E008DD39F;
+			productRefGroup = 8849250A2071616E008DD39F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				884925082071616E008DD39F /* IceK Watch */,
+				8849251C2071616E008DD39F /* IceK WatchTests */,
+				884925272071616E008DD39F /* IceK WatchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		884925072071616E008DD39F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				884925172071616E008DD39F /* LaunchScreen.storyboard in Resources */,
+				884925142071616E008DD39F /* Assets.xcassets in Resources */,
+				884925122071616E008DD39F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8849251B2071616E008DD39F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		884925262071616E008DD39F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		884925052071616E008DD39F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8849250F2071616E008DD39F /* ViewController.swift in Sources */,
+				8849250D2071616E008DD39F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		884925192071616E008DD39F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				884925222071616E008DD39F /* IceK_WatchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		884925242071616E008DD39F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8849252D2071616E008DD39F /* IceK_WatchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8849251F2071616E008DD39F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 884925082071616E008DD39F /* IceK Watch */;
+			targetProxy = 8849251E2071616E008DD39F /* PBXContainerItemProxy */;
+		};
+		8849252A2071616E008DD39F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 884925082071616E008DD39F /* IceK Watch */;
+			targetProxy = 884925292071616E008DD39F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		884925102071616E008DD39F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				884925112071616E008DD39F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		884925152071616E008DD39F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				884925162071616E008DD39F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8849252F2071616E008DD39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		884925302071616E008DD39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		884925322071616E008DD39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				INFOPLIST_FILE = "IceK Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		884925332071616E008DD39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				INFOPLIST_FILE = "IceK Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		884925352071616E008DD39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				INFOPLIST_FILE = "IceK WatchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-WatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IceK Watch.app/IceK Watch";
+			};
+			name = Debug;
+		};
+		884925362071616E008DD39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				INFOPLIST_FILE = "IceK WatchTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-WatchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IceK Watch.app/IceK Watch";
+			};
+			name = Release;
+		};
+		884925382071616E008DD39F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				INFOPLIST_FILE = "IceK WatchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-WatchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IceK Watch";
+			};
+			name = Debug;
+		};
+		884925392071616E008DD39F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				INFOPLIST_FILE = "IceK WatchUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-WatchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IceK Watch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		884925042071616E008DD39F /* Build configuration list for PBXProject "IceK Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8849252F2071616E008DD39F /* Debug */,
+				884925302071616E008DD39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		884925312071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				884925322071616E008DD39F /* Debug */,
+				884925332071616E008DD39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		884925342071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK WatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				884925352071616E008DD39F /* Debug */,
+				884925362071616E008DD39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		884925372071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK WatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				884925382071616E008DD39F /* Debug */,
+				884925392071616E008DD39F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 884925012071616E008DD39F /* Project object */;
+}
