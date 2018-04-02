@@ -18,6 +18,9 @@
 		88492540207162DA008DD39F /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849253F207162DA008DD39F /* PlayerView.xib */; };
 		88492542207162F0008DD39F /* MovieDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88492541207162F0008DD39F /* MovieDetailsView.xib */; };
 		8849254520722289008DD39F /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254420722289008DD39F /* MovieTableViewCell.swift */; };
+		8849254720727ECE008DD39F /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254620727ECE008DD39F /* MovieViewController.swift */; };
+		8849254B20727F73008DD39F /* MovieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8849254920727F73008DD39F /* MovieModel.xcdatamodeld */; };
+		8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254C2072803E008DD39F /* MovieTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		8849253F207162DA008DD39F /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		88492541207162F0008DD39F /* MovieDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsView.xib; sourceTree = "<group>"; };
 		8849254420722289008DD39F /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		8849254620727ECE008DD39F /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		8849254A20727F73008DD39F /* MovieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieModel.xcdatamodel; sourceTree = "<group>"; };
+		8849254C2072803E008DD39F /* MovieTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		8849250B2071616E008DD39F /* IceK Watch */ = {
 			isa = PBXGroup;
 			children = (
+				8849254820727F5E008DD39F /* Models */,
 				88492543207162FF008DD39F /* Controllers */,
 				8849253A207161D0008DD39F /* Views */,
 				8849250C2071616E008DD39F /* AppDelegate.swift */,
@@ -149,8 +156,18 @@
 		88492543207162FF008DD39F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8849254620727ECE008DD39F /* MovieViewController.swift */,
+				8849254C2072803E008DD39F /* MovieTableTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8849254820727F5E008DD39F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8849254920727F73008DD39F /* MovieModel.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +310,9 @@
 				8849250F2071616E008DD39F /* ViewController.swift in Sources */,
 				8849250D2071616E008DD39F /* AppDelegate.swift in Sources */,
 				8849254520722289008DD39F /* MovieTableViewCell.swift in Sources */,
+				8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */,
+				8849254720727ECE008DD39F /* MovieViewController.swift in Sources */,
+				8849254B20727F73008DD39F /* MovieModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +610,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8849254920727F73008DD39F /* MovieModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8849254A20727F73008DD39F /* MovieModel.xcdatamodel */,
+			);
+			currentVersion = 8849254A20727F73008DD39F /* MovieModel.xcdatamodel */;
+			path = MovieModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 884925012071616E008DD39F /* Project object */;
 }
