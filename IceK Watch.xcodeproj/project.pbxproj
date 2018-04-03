@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881139652073FDE800C948B8 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881139632073FDE800C948B8 /* ItemDetailsViewController.swift */; };
+		881139662073FDE800C948B8 /* ItemDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139642073FDE800C948B8 /* ItemDetailsViewController.xib */; };
+		881139692073FFB200C948B8 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881139672073FFB200C948B8 /* MediaPlayerViewController.swift */; };
+		8811396A2073FFB200C948B8 /* MediaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139682073FFB200C948B8 /* MediaPlayerViewController.xib */; };
 		8849250D2071616E008DD39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250C2071616E008DD39F /* AppDelegate.swift */; };
 		8849250F2071616E008DD39F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250E2071616E008DD39F /* ViewController.swift */; };
 		884925122071616E008DD39F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884925102071616E008DD39F /* Main.storyboard */; };
@@ -21,6 +25,9 @@
 		8849254720727ECE008DD39F /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254620727ECE008DD39F /* MovieViewController.swift */; };
 		8849254B20727F73008DD39F /* MovieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8849254920727F73008DD39F /* MovieModel.xcdatamodeld */; };
 		8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254C2072803E008DD39F /* MovieTableTableViewController.swift */; };
+		885D9AC82073750900C7225D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885D9AC72073750900C7225D /* Movie.swift */; };
+		885D9ACB20738B5B00C7225D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885D9AC920738B5B00C7225D /* HomeViewController.swift */; };
+		885D9ACC20738B5B00C7225D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885D9ACA20738B5B00C7225D /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		881139632073FDE800C948B8 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
+		881139642073FDE800C948B8 /* ItemDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsViewController.xib; sourceTree = "<group>"; };
+		881139672073FFB200C948B8 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
+		881139682073FFB200C948B8 /* MediaPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaPlayerViewController.xib; sourceTree = "<group>"; };
 		884925092071616E008DD39F /* IceK Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IceK Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8849250C2071616E008DD39F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8849250E2071616E008DD39F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +72,9 @@
 		8849254620727ECE008DD39F /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		8849254A20727F73008DD39F /* MovieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieModel.xcdatamodel; sourceTree = "<group>"; };
 		8849254C2072803E008DD39F /* MovieTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableTableViewController.swift; sourceTree = "<group>"; };
+		885D9AC72073750900C7225D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		885D9AC920738B5B00C7225D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		885D9ACA20738B5B00C7225D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +159,9 @@
 		8849253A207161D0008DD39F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				881139682073FFB200C948B8 /* MediaPlayerViewController.xib */,
+				881139642073FDE800C948B8 /* ItemDetailsViewController.xib */,
+				885D9ACA20738B5B00C7225D /* HomeViewController.xib */,
 				8849253D207162BE008DD39F /* ListMoviesView.xib */,
 				8849253F207162DA008DD39F /* PlayerView.xib */,
 				88492541207162F0008DD39F /* MovieDetailsView.xib */,
@@ -158,6 +175,9 @@
 			children = (
 				8849254620727ECE008DD39F /* MovieViewController.swift */,
 				8849254C2072803E008DD39F /* MovieTableTableViewController.swift */,
+				885D9AC920738B5B00C7225D /* HomeViewController.swift */,
+				881139632073FDE800C948B8 /* ItemDetailsViewController.swift */,
+				881139672073FFB200C948B8 /* MediaPlayerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				8849254920727F73008DD39F /* MovieModel.xcdatamodeld */,
+				885D9AC72073750900C7225D /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,9 +300,12 @@
 			files = (
 				884925172071616E008DD39F /* LaunchScreen.storyboard in Resources */,
 				884925142071616E008DD39F /* Assets.xcassets in Resources */,
+				8811396A2073FFB200C948B8 /* MediaPlayerViewController.xib in Resources */,
+				881139662073FDE800C948B8 /* ItemDetailsViewController.xib in Resources */,
 				884925122071616E008DD39F /* Main.storyboard in Resources */,
 				8849253E207162BE008DD39F /* ListMoviesView.xib in Resources */,
 				88492542207162F0008DD39F /* MovieDetailsView.xib in Resources */,
+				885D9ACC20738B5B00C7225D /* HomeViewController.xib in Resources */,
 				88492540207162DA008DD39F /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,8 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				885D9AC82073750900C7225D /* Movie.swift in Sources */,
 				8849250F2071616E008DD39F /* ViewController.swift in Sources */,
+				881139652073FDE800C948B8 /* ItemDetailsViewController.swift in Sources */,
 				8849250D2071616E008DD39F /* AppDelegate.swift in Sources */,
+				881139692073FFB200C948B8 /* MediaPlayerViewController.swift in Sources */,
+				885D9ACB20738B5B00C7225D /* HomeViewController.swift in Sources */,
 				8849254520722289008DD39F /* MovieTableViewCell.swift in Sources */,
 				8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */,
 				8849254720727ECE008DD39F /* MovieViewController.swift in Sources */,
