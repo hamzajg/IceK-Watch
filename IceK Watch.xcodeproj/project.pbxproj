@@ -28,6 +28,11 @@
 		885D9AC82073750900C7225D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885D9AC72073750900C7225D /* Movie.swift */; };
 		885D9ACB20738B5B00C7225D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885D9AC920738B5B00C7225D /* HomeViewController.swift */; };
 		885D9ACC20738B5B00C7225D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885D9ACA20738B5B00C7225D /* HomeViewController.xib */; };
+		88DD968420761BFF00FCB13D /* ServicesImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD968320761BFF00FCB13D /* ServicesImpl.swift */; };
+		88DD968720761E2F00FCB13D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD968620761E2F00FCB13D /* Item.swift */; };
+		88DD968A20769E0700FCB13D /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD968820769E0700FCB13D /* MoviesViewController.swift */; };
+		88DD968B20769E0700FCB13D /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DD968920769E0700FCB13D /* MoviesViewController.xib */; };
+		88DD968F20769FF900FCB13D /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD968E20769FF900FCB13D /* ItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		885D9AC72073750900C7225D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		885D9AC920738B5B00C7225D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		885D9ACA20738B5B00C7225D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		88DD968320761BFF00FCB13D /* ServicesImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesImpl.swift; sourceTree = "<group>"; };
+		88DD968620761E2F00FCB13D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		88DD968820769E0700FCB13D /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		88DD968920769E0700FCB13D /* MoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
+		88DD968E20769FF900FCB13D /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +135,11 @@
 		8849250B2071616E008DD39F /* IceK Watch */ = {
 			isa = PBXGroup;
 			children = (
+				88DD968020761AD700FCB13D /* Services */,
 				8849254820727F5E008DD39F /* Models */,
 				88492543207162FF008DD39F /* Controllers */,
 				8849253A207161D0008DD39F /* Views */,
 				8849250C2071616E008DD39F /* AppDelegate.swift */,
-				8849250E2071616E008DD39F /* ViewController.swift */,
 				884925102071616E008DD39F /* Main.storyboard */,
 				884925132071616E008DD39F /* Assets.xcassets */,
 				884925152071616E008DD39F /* LaunchScreen.storyboard */,
@@ -159,6 +169,7 @@
 		8849253A207161D0008DD39F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88DD968920769E0700FCB13D /* MoviesViewController.xib */,
 				881139682073FFB200C948B8 /* MediaPlayerViewController.xib */,
 				881139642073FDE800C948B8 /* ItemDetailsViewController.xib */,
 				885D9ACA20738B5B00C7225D /* HomeViewController.xib */,
@@ -166,6 +177,7 @@
 				8849253F207162DA008DD39F /* PlayerView.xib */,
 				88492541207162F0008DD39F /* MovieDetailsView.xib */,
 				8849254420722289008DD39F /* MovieTableViewCell.swift */,
+				88DD968E20769FF900FCB13D /* ItemCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,11 +185,13 @@
 		88492543207162FF008DD39F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8849250E2071616E008DD39F /* ViewController.swift */,
 				8849254620727ECE008DD39F /* MovieViewController.swift */,
 				8849254C2072803E008DD39F /* MovieTableTableViewController.swift */,
 				885D9AC920738B5B00C7225D /* HomeViewController.swift */,
 				881139632073FDE800C948B8 /* ItemDetailsViewController.swift */,
 				881139672073FFB200C948B8 /* MediaPlayerViewController.swift */,
+				88DD968820769E0700FCB13D /* MoviesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,8 +201,17 @@
 			children = (
 				8849254920727F73008DD39F /* MovieModel.xcdatamodeld */,
 				885D9AC72073750900C7225D /* Movie.swift */,
+				88DD968620761E2F00FCB13D /* Item.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		88DD968020761AD700FCB13D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				88DD968320761BFF00FCB13D /* ServicesImpl.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +277,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Hamza JGUERIM";
 				TargetAttributes = {
 					884925082071616E008DD39F = {
@@ -307,6 +330,7 @@
 				88492542207162F0008DD39F /* MovieDetailsView.xib in Resources */,
 				885D9ACC20738B5B00C7225D /* HomeViewController.xib in Resources */,
 				88492540207162DA008DD39F /* PlayerView.xib in Resources */,
+				88DD968B20769E0700FCB13D /* MoviesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,13 +358,17 @@
 				885D9AC82073750900C7225D /* Movie.swift in Sources */,
 				8849250F2071616E008DD39F /* ViewController.swift in Sources */,
 				881139652073FDE800C948B8 /* ItemDetailsViewController.swift in Sources */,
+				88DD968420761BFF00FCB13D /* ServicesImpl.swift in Sources */,
+				88DD968720761E2F00FCB13D /* Item.swift in Sources */,
 				8849250D2071616E008DD39F /* AppDelegate.swift in Sources */,
 				881139692073FFB200C948B8 /* MediaPlayerViewController.swift in Sources */,
 				885D9ACB20738B5B00C7225D /* HomeViewController.swift in Sources */,
+				88DD968A20769E0700FCB13D /* MoviesViewController.swift in Sources */,
 				8849254520722289008DD39F /* MovieTableViewCell.swift in Sources */,
 				8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */,
 				8849254720727ECE008DD39F /* MovieViewController.swift in Sources */,
 				8849254B20727F73008DD39F /* MovieModel.xcdatamodeld in Sources */,
+				88DD968F20769FF900FCB13D /* ItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +437,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -416,6 +445,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -466,6 +496,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -473,6 +504,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
