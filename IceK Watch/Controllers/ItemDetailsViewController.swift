@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import AVKit
 
 class ItemDetailsViewController: UIViewController {
 
     @IBOutlet weak var itemImageView: UIImageView!
-    @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var itemRatingLabel: UILabel!
     @IBOutlet weak var itemDescTextView: UITextView!
     var item: Item?
@@ -21,6 +21,19 @@ class ItemDetailsViewController: UIViewController {
         if item != nil {
             itemRatingLabel.text?.append(" " + String(item!.itemRating))
             itemDescTextView.text = item?.itemDesc
+        }
+    }
+    
+    @IBAction func btnPlayClicked(_ sender: UIButton) {
+        if item != nil {
+            if let url = NSURL(string: item!.itemMediaURL) {
+                let video = AVPlayer(url: url as URL)
+                let videoPlayer = AVPlayerViewController()
+                videoPlayer.player = video
+                present(videoPlayer, animated: true, completion: {
+                    video.play()
+                    })
+            }
         }
     }
 

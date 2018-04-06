@@ -13,7 +13,7 @@ class ServicesImpl {
     var animes : [Item] = []
     var series : [Item] = []
     static let MoviesInstance = ServicesImpl(type: 1)
-    static let SeriessInstance = ServicesImpl(type: 2)
+    static let SeriesInstance = ServicesImpl(type: 2)
     static let AnimesInstance = ServicesImpl(type: 3)
     fileprivate init(type: Int) {
         switch type {
@@ -35,31 +35,33 @@ class ServicesImpl {
     func getAllMovies() {
         var m : [Item] = []
         //m = HTTP Get All Movies
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
-        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "Test", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
+        m.append(Item(itemId: Int64(1), itemTitle: "Test", itemDesc: "Test", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
         self.movies = m
         
     }
     func getAllAnimes() {
-        let a : [Item] = []
+        var a : [Item] = []
         //m = HTTP Get All Animes
+        a.append(Item(itemId: Int64(1), itemTitle: "Naruto Shippidden", itemDesc: "Naruto Shippidde", itemRating: 10, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
         self.animes = a
         
     }
     func getAllSeries() {
-        let s : [Item] = []
+        var s : [Item] = []
         //m = HTTP Get All Series
+        s.append(Item(itemId: Int64(1), itemTitle: "Silicon Valley", itemDesc: "Silicon Valley", itemRating: 3, itemImage: "Test", itemMediaURL: "http://esioslive6-i.akamaihd.net/hls/live/202892/AL_P_ESP1_FR_FRA/playlist.m3u8", itemType: "Test"))
         self.series = s
         
     }

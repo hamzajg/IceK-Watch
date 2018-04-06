@@ -14,13 +14,13 @@ class Item {
     var itemId : Int64
     var itemTitle : String
     var itemDesc : String
-    var itemRating : Int
+    var itemRating : Float
     var itemImage : String
     var itemMediaURL : String
     var itemType : String
     
     init(itemId: Int64, itemTitle: String, itemDesc: String,
-         itemRating: Int, itemImage: String, itemMediaURL: String, itemType: String) {
+         itemRating: Float, itemImage: String, itemMediaURL: String, itemType: String) {
         
         self.itemId = itemId
         self.itemTitle = itemTitle

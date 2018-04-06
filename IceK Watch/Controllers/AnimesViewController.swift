@@ -1,32 +1,29 @@
 //
-//  MoviesViewController.swift
+//  AnimesViewController.swift
 //  IceK Watch
 //
-//  Created by Hamza JGUERIM on 2018-04-05.
+//  Created by Hamza JGUERIM on 2018-04-06.
 //  Copyright © 2018 Hamza JGUERIM. All rights reserved.
 //
 
 import UIKit
 
-class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    @IBOutlet weak var moviesCollectionView: UICollectionView!
-    let services = ServicesImpl.MoviesInstance
+class AnimesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    let services = ServicesImpl.AnimesInstance
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return services.movies.count
+        return services.animes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        let movie = services.movies[indexPath.row]
-        cell.displayContent(item: movie)
+        let anime = services.animes[indexPath.row]
+        cell.displayContent(item: anime)
         return cell
-    }
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
-    {
-        return CGSize(width: collectionView.frame.size.width/3.2, height: 100)
     }
     
 
+    @IBOutlet weak var animesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,11 +43,11 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "ShowMovieDetails" {
+        if segue.identifier == "ShowAnimeDetails" {
             if let destination = segue.destination as? ItemDetailsViewController{
                 let cell = sender as! UICollectionViewCell
-                let indexPath = moviesCollectionView.indexPath(for: cell)
-                let selectedData = services.movies[(indexPath?.row)!]
+                let indexPath = animesCollectionView.indexPath(for: cell)
+                let selectedData = services.animes[(indexPath?.row)!]
                 destination.item = selectedData
             }
         }
