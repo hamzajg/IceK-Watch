@@ -46,9 +46,32 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kd5-vh-jNW">
                                         <rect key="frame" x="0.0" y="0.0" width="720" height="230"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7G-g2-GDq">
+                                                <rect key="frame" x="0.0" y="0.0" width="720" height="222"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Suits001" translatesAutoresizingMaskIntoConstraints="NO" id="w3W-z0-EZb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="720" height="214"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="p1P-xv-RL6">
+                                                        <rect key="frame" x="323" y="177" width="39" height="37"/>
+                                                    </pageControl>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="p1P-xv-RL6" firstAttribute="bottom" secondItem="B7G-g2-GDq" secondAttribute="bottomMargin" id="3lu-Ev-pVU"/>
+                                                    <constraint firstItem="p1P-xv-RL6" firstAttribute="top" secondItem="B7G-g2-GDq" secondAttribute="top" constant="177" id="Ydt-pG-g6J"/>
+                                                    <constraint firstAttribute="trailing" secondItem="p1P-xv-RL6" secondAttribute="trailing" constant="358" id="d2s-mn-C1Z"/>
+                                                </constraints>
+                                            </scrollView>
+                                        </subviews>
                                         <constraints>
+                                            <constraint firstItem="B7G-g2-GDq" firstAttribute="top" secondItem="kd5-vh-jNW" secondAttribute="top" id="cAI-EX-rbz"/>
+                                            <constraint firstItem="p1P-xv-RL6" firstAttribute="centerX" secondItem="kd5-vh-jNW" secondAttribute="centerX" constant="-17.5" id="e3r-VS-b3E"/>
+                                            <constraint firstAttribute="bottom" secondItem="B7G-g2-GDq" secondAttribute="bottom" constant="8" id="hy7-m7-n3L"/>
                                             <constraint firstAttribute="height" constant="230" id="jbI-Z4-MI9"/>
+                                            <constraint firstAttribute="trailing" secondItem="B7G-g2-GDq" secondAttribute="trailing" id="o9x-zw-LkS"/>
+                                            <constraint firstItem="B7G-g2-GDq" firstAttribute="leading" secondItem="kd5-vh-jNW" secondAttribute="leading" id="oYG-SQ-5xh"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbZ-UE-YtO">
@@ -769,6 +792,7 @@
     <resources>
         <image name="Basilisk004" width="496" height="700"/>
         <image name="SiliconValley002" width="480" height="640"/>
+        <image name="Suits001" width="450" height="630"/>
         <image name="Yowamushi003" width="800" height="1120"/>
     </resources>
     <inferredMetricsTieBreakers>
