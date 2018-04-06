@@ -10,11 +10,18 @@ import UIKit
 
 class ItemDetailsViewController: UIViewController {
 
+    @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var btnPlay: UIButton!
+    @IBOutlet weak var itemRatingLabel: UILabel!
+    @IBOutlet weak var itemDescTextView: UITextView!
+    var item: Item?
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        if item != nil {
+            itemRatingLabel.text?.append(" " + String(item!.itemRating))
+            itemDescTextView.text = item?.itemDesc
+        }
     }
 
     override func didReceiveMemoryWarning() {

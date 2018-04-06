@@ -75,17 +75,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-aN-hw2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kx6-he-v7l">
-                                        <rect key="frame" x="8" y="28" width="359" height="268"/>
+                                        <rect key="frame" x="8" y="72" width="359" height="268"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dr-aX-ceN">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="268"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="268" id="RBP-3D-WBw"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IX4-8X-8JO">
-                                        <rect key="frame" x="8" y="304" width="359" height="355"/>
+                                        <rect key="frame" x="8" y="348" width="359" height="355"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qc9-j1-9a0">
                                                 <rect key="frame" x="8" y="8" width="343" height="21"/>
@@ -113,9 +119,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-ZW-GKI">
-                                        <rect key="frame" x="164" y="147" width="46" height="30"/>
+                                        <rect key="frame" x="172" y="147" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Play"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -142,11 +148,14 @@
                     </view>
                     <connections>
                         <outlet property="btnPlay" destination="fqz-ZW-GKI" id="hfZ-Ge-FGi"/>
+                        <outlet property="itemDescTextView" destination="aZJ-F4-UN4" id="Lo6-Jo-0rf"/>
+                        <outlet property="itemImageView" destination="8dr-aX-ceN" id="qda-0F-JTP"/>
+                        <outlet property="itemRatingLabel" destination="Qc9-j1-9a0" id="e0w-xr-dj0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POG-rc-0xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513" y="1536"/>
+            <point key="canvasLocation" x="2071" y="99"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="m8Q-eF-CJR">
@@ -286,22 +295,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pr-eJ-rRF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="125"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vd-Q9-Xev">
-                                                    <rect key="frame" x="6" y="133" width="119" height="21"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-qh-cmw">
+                                                    <rect key="frame" x="2" y="121" width="120" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vd-Q9-Xev">
+                                                            <rect key="frame" x="8" y="8" width="109" height="45"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.96893590299702526" green="0.96628614049568973" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.52308058375634525" green="0.52308058375634525" blue="0.52308058375634525" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </view>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="customSize" width="125" height="174"/>
                                         <connections>
                                             <outlet property="itemImageView" destination="8Pr-eJ-rRF" id="odZ-aX-TH7"/>
                                             <outlet property="itemTitleLabel" destination="6vd-Q9-Xev" id="x4X-lx-Vpi"/>
+                                            <segue destination="aYf-hl-Vfi" kind="show" identifier="ShowItemDetails" id="dul-qB-ySO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
