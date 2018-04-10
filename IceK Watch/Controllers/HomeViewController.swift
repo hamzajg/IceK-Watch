@@ -8,8 +8,21 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    let services = ServicesImpl.MoviesInstance
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
+        let movie = services.movies[indexPath.row]
+        cell.displayContent(item: movie)
+        return cell
+    }
+    
 
+    @IBOutlet weak var recentMoviesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
