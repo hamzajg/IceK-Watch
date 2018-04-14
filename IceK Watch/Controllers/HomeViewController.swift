@@ -9,22 +9,42 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    let services = ServicesImpl.MoviesInstance
+    
+    @IBOutlet weak var recentMoviesCollectionView: UICollectionView!
+    @IBOutlet weak var recentSeriesCollectionView: UICollectionView!
+    @IBOutlet weak var recentAnimesCollectionView: UICollectionView!
+    let services = ServicesImpl.Instance
+    var movies : [Movie] = []
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if(collectionView == recentMoviesCollectionView) {
+            return movies.count > 10 ? 10 : movies.count}
+        else {
+            return 1;
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        let movie = services.movies[indexPath.row]
-        cell.displayContent(item: movie)
+        if(collectionView == recentMoviesCollectionView) {
+            let movie = movies[indexPath.row]
+            print(movie.img)
+            cell.displayMovieImgContent(movie: movie)
+        } else if(collectionView == recentSeriesCollectionView){
+            let serie = services.getAllSeries()[indexPath.row]
+            cell.displayImgContent(item: serie)
+        } else {
+            let anime = services.getAllAnimes()[indexPath.row]
+            cell.displayImgContent(item: anime)
+        }
         return cell
     }
     
-
-    @IBOutlet weak var recentMoviesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        services.getAllMoviesAsync(){
+            (m) in self.movies = (m)
+            self.recentMoviesCollectionView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {

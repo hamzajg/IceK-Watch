@@ -1,32 +1,33 @@
 //
-//  Movie.swift
+//  Serie.swift
 //  IceK Watch
 //
-//  Created by Hamza JGUERIM on 2018-04-03.
+//  Created by Hamza JGUERIM on 2018-04-14.
 //  Copyright © 2018 Hamza JGUERIM. All rights reserved.
 //
 
 import Foundation
+
 import UIKit
 
-class Movie : Codable
+class Serie : Codable
 {
-    var idmovies : Int64
+    var idserie : Int64
     var nom : String
     var description : String
     var categorie : String
-    var video : String
     var note : Float
     var img : String
+    var nbpart : Int
     
-    init(idmovies: Int64, nom: String, description: String, categorie: String, video: String, note: Float, img: String) {
+    init(idserie: Int64, nom: String, description: String, categorie: String, note: Float, img: String, nbpart: Int) {
         
-        self.idmovies = idmovies
+        self.idserie = idserie
         self.nom = nom
         self.description = description
         self.categorie = categorie
-        self.video = video
         self.note = note
         self.img = img
+        self.nbpart = nbpart
     }
 }

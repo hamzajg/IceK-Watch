@@ -10,15 +10,16 @@ import UIKit
 
 class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var moviesCollectionView: UICollectionView!
-    let services = ServicesImpl.MoviesInstance
+    let services = ServicesImpl.Instance
+    var movies : [Movie] = []
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return services.movies.count
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        let movie = services.movies[indexPath.row]
-        cell.displayContent(item: movie)
+        let movie = movies[indexPath.row]
+        cell.displayMovieContent(movie: movie)
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
@@ -29,6 +30,10 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        services.getAllMoviesAsync(){
+            (m) in self.movies = (m)
+            self.moviesCollectionView.reloadData()
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -50,8 +55,8 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             if let destination = segue.destination as? ItemDetailsViewController{
                 let cell = sender as! UICollectionViewCell
                 let indexPath = moviesCollectionView.indexPath(for: cell)
-                let selectedData = services.movies[(indexPath?.row)!]
-                destination.item = selectedData
+                let selectedData = movies[(indexPath?.row)!]
+                destination.movie = selectedData
             }
         }
     }

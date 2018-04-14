@@ -9,15 +9,15 @@
 import UIKit
 
 class AnimesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    let services = ServicesImpl.AnimesInstance
+    let services = ServicesImpl.Instance
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return services.animes.count
+        return services.getAllAnimes().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        let anime = services.animes[indexPath.row]
+        let anime = services.getAllAnimes()[indexPath.row]
         cell.displayContent(item: anime)
         return cell
     }
@@ -47,7 +47,7 @@ class AnimesViewController: UIViewController, UICollectionViewDataSource, UIColl
             if let destination = segue.destination as? ItemDetailsViewController{
                 let cell = sender as! UICollectionViewCell
                 let indexPath = animesCollectionView.indexPath(for: cell)
-                let selectedData = services.animes[(indexPath?.row)!]
+                let selectedData = services.getAllAnimes()[(indexPath?.row)!]
                 destination.item = selectedData
             }
         }

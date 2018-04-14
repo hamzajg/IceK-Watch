@@ -10,14 +10,14 @@ import UIKit
 
 class SeriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let services = ServicesImpl.SeriesInstance
+    let services = ServicesImpl.Instance
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return services.series.count
+        return services.getAllSeries().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        let serie = services.series[indexPath.row]
+        let serie = services.getAllSeries()[indexPath.row]
         cell.displayContent(item: serie)
         return cell
     }
@@ -47,7 +47,7 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
             if let destination = segue.destination as? ItemDetailsViewController{
                 let cell = sender as! UICollectionViewCell
                 let indexPath = seriesCollectionView.indexPath(for: cell)
-                let selectedData = services.series[(indexPath?.row)!]
+                let selectedData = services.getAllSeries()[(indexPath?.row)!]
                 destination.item = selectedData
             }
         }
