@@ -11,14 +11,17 @@ import UIKit
 class SeriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let services = ServicesImpl.Instance
+    var series : [Serie] = []
+    var activityIndicator = UIActivityIndicatorView()
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return services.getAllSeries().count
+        return series.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        let serie = services.getAllSeries()[indexPath.row]
-        cell.displayContent(item: serie)
+        let serie = series[indexPath.row]
+        cell.displaySerieContent(serie: serie)
         return cell
     }
     
@@ -26,7 +29,16 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var seriesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        services.getAllSeriesAsync(){
+            (s) in self.series = (s)
+            self.seriesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -47,8 +59,8 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
             if let destination = segue.destination as? ItemDetailsViewController{
                 let cell = sender as! UICollectionViewCell
                 let indexPath = seriesCollectionView.indexPath(for: cell)
-                let selectedData = services.getAllSeries()[(indexPath?.row)!]
-                destination.item = selectedData
+                let selectedData = series[(indexPath?.row)!]
+                destination.serie = selectedData
             }
         }
     }

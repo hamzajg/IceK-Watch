@@ -12,6 +12,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     let services = ServicesImpl.Instance
     var movies : [Movie] = []
+    var activityIndicator = UIActivityIndicatorView()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
@@ -30,9 +31,15 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
         services.getAllMoviesAsync(){
             (m) in self.movies = (m)
             self.moviesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
         }
 
         // Do any additional setup after loading the view.

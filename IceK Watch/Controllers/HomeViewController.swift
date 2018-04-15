@@ -13,7 +13,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var recentMoviesCollectionView: UICollectionView!
     @IBOutlet weak var recentSeriesCollectionView: UICollectionView!
     @IBOutlet weak var recentAnimesCollectionView: UICollectionView!
+    var activityIndicator = UIActivityIndicatorView()
     let services = ServicesImpl.Instance
+    var sliders : [Slider] = []
     var movies : [Movie] = []
     var series : [Serie] = []
     var animes : [Anime] = []
@@ -45,17 +47,22 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        services.getAllMoviesAsync(){
-            (m) in self.movies = (m)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        services.getHomeAsync(){
+            (h) in
+            let home = (h)
+            self.sliders = home.sliders
+            self.movies = home.movies
+            self.series = home.series
+            self.animes = home.animes
             self.recentMoviesCollectionView.reloadData()
-        }
-        services.getAllSeriesAsync(){
-            (s) in self.series = (s)
             self.recentSeriesCollectionView.reloadData()
-        }
-        services.getAllAnimesAsync(){
-            (a) in self.animes = (a)
             self.recentAnimesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
         }
     }
 
@@ -64,14 +71,37 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowHMovieDetails" {
+            if let destination = segue.destination as? ItemDetailsViewController{
+                let cell = sender as! UICollectionViewCell
+                let indexPath = recentMoviesCollectionView.indexPath(for: cell)
+                let selectedData = movies[(indexPath?.row)!]
+                destination.movie = selectedData
+            }
+        } else if segue.identifier == "ShowHSerieDetails" {
+            if let destination = segue.destination as? ItemDetailsViewController{
+                let cell = sender as! UICollectionViewCell
+                let indexPath = recentSeriesCollectionView.indexPath(for: cell)
+                let selectedData = series[(indexPath?.row)!]
+                destination.serie = selectedData
+            }
+        }else if segue.identifier == "ShowHAnimeDetails" {
+            if let destination = segue.destination as? ItemDetailsViewController{
+                let cell = sender as! UICollectionViewCell
+                let indexPath = recentAnimesCollectionView.indexPath(for: cell)
+                let selectedData = animes[(indexPath?.row)!]
+                destination.anime = selectedData
+            }
+        }
     }
-    */
+    
 
 }

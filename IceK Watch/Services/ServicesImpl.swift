@@ -14,6 +14,24 @@ class ServicesImpl {
     fileprivate init() {
     }
     
+    func getHomeAsync(completed: @escaping (Home) -> ()){
+        var h : Home = Home()
+        //m = HTTP Get All Movies
+        let urlString = baseURL + "v1/home.php"
+        guard let url = URL(string: urlString) else {return}
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            guard let data = data else {return}
+            do{
+                h = try JSONDecoder().decode(Home.self, from: data)
+                DispatchQueue.main.async {
+                    completed(h)
+                }
+            }catch let jsonErr{
+                print("getAllMoviesAsync Error serializing json: ", jsonErr)
+            }
+            
+            }.resume()
+    }
     func getAllMoviesAsync(completed: @escaping ([Movie]) -> ()){
         var m : [Movie] = []
         //m = HTTP Get All Movies

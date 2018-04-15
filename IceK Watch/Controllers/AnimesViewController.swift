@@ -10,15 +10,17 @@ import UIKit
 
 class AnimesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     let services = ServicesImpl.Instance
+    var animes : [Anime] = []
+    var activityIndicator = UIActivityIndicatorView()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return services.getAllAnimes().count
+        return animes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        let anime = services.getAllAnimes()[indexPath.row]
-        cell.displayContent(item: anime)
+        let anime = animes[indexPath.row]
+        cell.displayAnimeContent(anime: anime)
         return cell
     }
     
@@ -26,6 +28,16 @@ class AnimesViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var animesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        self.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        services.getAllAnimesAsync(){
+            (a) in self.animes = (a)
+            self.animesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -47,8 +59,8 @@ class AnimesViewController: UIViewController, UICollectionViewDataSource, UIColl
             if let destination = segue.destination as? ItemDetailsViewController{
                 let cell = sender as! UICollectionViewCell
                 let indexPath = animesCollectionView.indexPath(for: cell)
-                let selectedData = services.getAllAnimes()[(indexPath?.row)!]
-                destination.item = selectedData
+                let selectedData = animes[(indexPath?.row)!]
+                destination.anime = selectedData
             }
         }
     }
