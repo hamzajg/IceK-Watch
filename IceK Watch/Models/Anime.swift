@@ -18,8 +18,9 @@ class Anime : Codable
     var note : Float
     var img : String
     var nbpart : Int
+    var parts: [Part]
     
-    init(idanime: Int64, nom: String, description: String, categorie: String, note: Float, img: String, nbpart: Int) {
+    init(idanime: Int64, nom: String, description: String, categorie: String, note: Float, img: String, nbpart: Int, parts: [Part]) {
         
         self.idanime = idanime
         self.nom = nom
@@ -28,5 +29,6 @@ class Anime : Codable
         self.note = note
         self.img = img
         self.nbpart = nbpart
+        self.parts = parts
     }
 }

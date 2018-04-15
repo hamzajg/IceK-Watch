@@ -112,14 +112,27 @@ class ItemDetailsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(serie != nil) {
+            if segue.identifier == "ShowPartDetails" {
+                if let destination = segue.destination as? PartViewController{
+                    destination.serie = serie
+                }
+            }
+        } else if(anime != nil) {
+            if segue.identifier == "ShowPartDetails" {
+                if let destination = segue.destination as? PartViewController{
+                    destination.anime = anime
+                }
+            }
+        }
     }
-    */
+ 
 
 }

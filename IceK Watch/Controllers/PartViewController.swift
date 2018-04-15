@@ -7,12 +7,30 @@
 //
 
 import UIKit
+import AVKit
 
 class PartViewController: UIViewController {
 
+    @IBOutlet weak var videoPlayerView: UIView!
+    let services = ServicesImpl.Instance
+    var serie: Serie?
+    var anime: Anime?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        services.getOneAnimeByAnimeIdAsync(animeId: (anime?.idanime)!){
+            (a) in
+            let anime = (a)
+            print(anime.parts.count)
+        }
+        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        let player = AVPlayer(url: videoURL!)
+        let playerController = AVPlayerViewController()
+        playerController.player = player
+        self.addChildViewController(playerController)
+        playerController.view.frame = self.videoPlayerView.bounds
+        videoPlayerView.addSubview(playerController.view)
+        player.play()
         // Do any additional setup after loading the view.
     }
 

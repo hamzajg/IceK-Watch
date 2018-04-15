@@ -86,6 +86,25 @@ class ServicesImpl {
             
             }.resume()
     }
+    
+    func getOneAnimeByAnimeIdAsync(animeId:Int64, completed: @escaping (Anime) -> ()){
+        var a : Anime? = nil
+        //m = HTTP Get All Movies
+        let urlString = baseURL + "v1/animes.php?id=" + String(animeId)
+        guard let url = URL(string: urlString) else {return}
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            guard let data = data else {return}
+            do{
+                a = try JSONDecoder().decode(Anime.self, from: data)
+                DispatchQueue.main.async {
+                    completed(a!)
+                }
+            }catch let jsonErr{
+                print("getOneAnimeByAnimeIdAsync Error serializing json: ", jsonErr)
+            }
+            
+            }.resume()
+    }
     func getAllMovies() -> ([Movie]) {
         var m : [Movie] = []
         //m = HTTP Get All Movies
