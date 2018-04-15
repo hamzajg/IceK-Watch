@@ -39,25 +39,49 @@ class ItemCollectionViewCell: UICollectionViewCell {
     }
     func displaySerieContent(serie: Serie) {
         itemImageView.contentMode = .scaleAspectFill
-        itemImageView.downloadedFrom(link: serie.img)
+        itemImageView.downloadedFrom(link: serie.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
         itemTitleLabel.text = serie.nom
     }
     func displayAnimeContent(anime: Anime) {
         itemImageView.contentMode = .scaleAspectFill
-        itemImageView.downloadedFrom(link: anime.img)
+        itemImageView.downloadedFrom(link: anime.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
         itemTitleLabel.text = anime.nom
     }
     func displayMovieContent(movie: Movie) {
         itemImageView.contentMode = .scaleAspectFill
-        itemImageView.downloadedFrom(link: movie.img)
+        itemImageView.downloadedFrom(link: movie.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
         itemTitleLabel.text = movie.nom
     }
     func displayMovieImgContent(movie: Movie) {
         itemImageView.contentMode = .scaleAspectFill
-        itemImageView.downloadedFrom(link: movie.img)
+        itemImageView.downloadedFrom(link: movie.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
+    }
+    func displaySerieImgContent(serie: Serie) {
+        itemImageView.contentMode = .scaleAspectFill
+        itemImageView.downloadedFrom(link: serie.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
+    }
+    func displayAnimeImgContent(anime: Anime) {
+        itemImageView.contentMode = .scaleAspectFill
+        itemImageView.downloadedFrom(link: anime.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
     }
     func displayImgContent(item: Item) {
         itemImageView.contentMode = .scaleAspectFill
-        itemImageView.downloadedFrom(link: item.itemImage)
+        itemImageView.downloadedFrom(link: item.itemImage.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
     }
+//    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            completion(data, response, error)
+//            }.resume()
+//    }
+//    func downloadImage(url: URL) {
+//        print("Download Started")
+//        getDataFromUrl(url: url) { data, response, error in
+//            guard let data = data, error == nil else { return }
+//            print(response?.suggestedFilename ?? url.lastPathComponent)
+//            print("Download Finished")
+//            DispatchQueue.main.async() {
+//                self.itemImageView.image = UIImage(data: data)
+//            }
+//        }
+//    }
 }

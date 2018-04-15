@@ -15,26 +15,30 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var recentAnimesCollectionView: UICollectionView!
     let services = ServicesImpl.Instance
     var movies : [Movie] = []
+    var series : [Serie] = []
+    var animes : [Anime] = []
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView == recentMoviesCollectionView) {
-            return movies.count > 10 ? 10 : movies.count}
-        else {
-            return 1;
-        }
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
         if(collectionView == recentMoviesCollectionView) {
-            let movie = movies[indexPath.row]
-            print(movie.img)
-            cell.displayMovieImgContent(movie: movie)
+            if(movies.count > indexPath.row) {
+                let movie = movies[indexPath.row]
+                cell.displayMovieImgContent(movie: movie)
+                print(movie.img)
+            }
         } else if(collectionView == recentSeriesCollectionView){
-            let serie = services.getAllSeries()[indexPath.row]
-            cell.displayImgContent(item: serie)
+            if(series.count > indexPath.row) {
+                let serie = series[indexPath.row]
+                cell.displaySerieImgContent(serie: serie)
+            }
         } else {
-            let anime = services.getAllAnimes()[indexPath.row]
-            cell.displayImgContent(item: anime)
+            if(animes.count > indexPath.row) {
+                let anime = animes[indexPath.row]
+                cell.displayAnimeImgContent(anime: anime)
+            }
         }
         return cell
     }
@@ -44,6 +48,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         services.getAllMoviesAsync(){
             (m) in self.movies = (m)
             self.recentMoviesCollectionView.reloadData()
+        }
+        services.getAllSeriesAsync(){
+            (s) in self.series = (s)
+            self.recentSeriesCollectionView.reloadData()
+        }
+        services.getAllAnimesAsync(){
+            (a) in self.animes = (a)
+            self.recentAnimesCollectionView.reloadData()
         }
     }
 

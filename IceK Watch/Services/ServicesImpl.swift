@@ -27,7 +27,7 @@ class ServicesImpl {
                     completed(m)
                 }
             }catch let jsonErr{
-                print("Error serializing json: ", jsonErr)
+                print("getAllMoviesAsync Error serializing json: ", jsonErr)
             }
             
             }.resume()
@@ -45,7 +45,7 @@ class ServicesImpl {
                     completed(s)
                 }
             }catch let jsonErr{
-                print("Error serializing json: ", jsonErr)
+                print("getAllSeriesAsync Error serializing json: ", jsonErr)
             }
             
             }.resume()
@@ -63,7 +63,7 @@ class ServicesImpl {
                     completed(a)
                 }
             }catch let jsonErr{
-                print("Error serializing json: ", jsonErr)
+                print("getAllAnimesAsync Error serializing json: ", jsonErr)
             }
             
             }.resume()

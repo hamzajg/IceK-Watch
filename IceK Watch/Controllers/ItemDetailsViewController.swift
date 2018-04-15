@@ -20,7 +20,7 @@ class ItemDetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         if item != nil {
-            let url = URL(string: (item?.itemImage)!)
+            let url = URL(string: (item?.itemImage.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             
             if(url != nil) {
                 DispatchQueue.global().async {
@@ -39,7 +39,7 @@ class ItemDetailsViewController: UIViewController {
     
     @IBAction func btnPlayClicked(_ sender: UIButton) {
         if item != nil {
-            if let url = NSURL(string: item!.itemMediaURL) {
+            if let url = NSURL(string: item!.itemMediaURL.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)) {
                 let video = AVPlayer(url: url as URL)
                 let videoPlayer = AVPlayerViewController()
                 videoPlayer.player = video
@@ -48,7 +48,7 @@ class ItemDetailsViewController: UIViewController {
                     })
             }
         } else if(movie != nil) {
-            if let url = NSURL(string: movie!.video) {
+            if let url = NSURL(string: movie!.video.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)) {
                 let video = AVPlayer(url: url as URL)
                 let videoPlayer = AVPlayerViewController()
                 videoPlayer.player = video
