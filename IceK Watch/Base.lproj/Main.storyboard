@@ -483,6 +483,21 @@
             </objects>
             <point key="canvasLocation" x="2237.5999999999999" y="880.20989505247383"/>
         </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="d68-6d-YoB">
+            <objects>
+                <viewController id="5Hc-Jp-uc3" customClass="MovieViewController" customModule="IceK_Watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g6o-xF-qje">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b2Y-sd-gKh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eH1-uJ-wGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2960" y="885"/>
+        </scene>
         <!--Part View Controller-->
         <scene sceneID="YUR-fd-rhJ">
             <objects>
