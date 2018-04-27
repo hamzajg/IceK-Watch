@@ -80,7 +80,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "ShowHMovieDetails" {
-            if let destination = segue.destination as? ItemDetailsViewController{
+            if let destination = segue.destination as? MovieViewController{
                 let cell = sender as! UICollectionViewCell
                 let indexPath = recentMoviesCollectionView.indexPath(for: cell)
                 let selectedData = movies[(indexPath?.row)!]

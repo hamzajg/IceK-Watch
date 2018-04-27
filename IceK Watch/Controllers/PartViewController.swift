@@ -17,11 +17,18 @@ class PartViewController: UIViewController {
     var anime: Anime?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        services.getOneAnimeByAnimeIdAsync(animeId: (anime?.idanime)!){
-            (a) in
-            let anime = (a)
-            print(anime.parts.count)
+        if(anime != nil) {
+            services.getOneAnimeByAnimeIdAsync(animeId: (anime?.idanime)!){
+                (a) in
+                let anime = (a)
+                print(anime.parts.count)
+            }
+        } else if(serie != nil) {
+            services.getOneSerieBySerieIdAsync(serieId: (serie?.idserie)!){
+                (s) in
+                let serie = (s)
+                print(serie.parts.count)
+            }
         }
         let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
         let player = AVPlayer(url: videoURL!)

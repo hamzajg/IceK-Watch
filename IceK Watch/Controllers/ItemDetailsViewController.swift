@@ -83,28 +83,6 @@ class ItemDetailsViewController: UIViewController {
             itemDescTextView.text = anime?.description
         }
     }
-    
-    @IBAction func btnPlayClicked(_ sender: UIButton) {
-        if item != nil {
-            if let url = NSURL(string: item!.itemMediaURL.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)) {
-                let video = AVPlayer(url: url as URL)
-                let videoPlayer = AVPlayerViewController()
-                videoPlayer.player = video
-                present(videoPlayer, animated: true, completion: {
-                    video.play()
-                    })
-            }
-        } else if(movie != nil) {
-            if let url = NSURL(string: movie!.video.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)) {
-                let video = AVPlayer(url: url as URL)
-                let videoPlayer = AVPlayerViewController()
-                videoPlayer.player = video
-                present(videoPlayer, animated: true, completion: {
-                    video.play()
-                })
-            }
-        } 
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

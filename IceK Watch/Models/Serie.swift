@@ -19,8 +19,9 @@ class Serie : Codable
     var note : Float
     var img : String
     var nbpart : Int
+    var parts: [Part]
     
-    init(idserie: Int64, nom: String, description: String, categorie: String, note: Float, img: String, nbpart: Int) {
+    init(idserie: Int64, nom: String, description: String, categorie: String, note: Float, img: String, nbpart: Int, parts: [Part]) {
         
         self.idserie = idserie
         self.nom = nom
@@ -29,5 +30,6 @@ class Serie : Codable
         self.note = note
         self.img = img
         self.nbpart = nbpart
+        self.parts = parts
     }
 }

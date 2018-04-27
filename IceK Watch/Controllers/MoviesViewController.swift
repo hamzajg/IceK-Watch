@@ -36,7 +36,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         activityIndicator.activityIndicatorViewStyle = .gray
         self.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        services.getAllMoviesAsync(){
+        services.getAllMoviesPageableAsync(pageStart: 1, pageEnd: 25){
             (m) in self.movies = (m)
             self.moviesCollectionView.reloadData()
             self.activityIndicator.stopAnimating()

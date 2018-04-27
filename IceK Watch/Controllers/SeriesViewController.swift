@@ -34,7 +34,7 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
         activityIndicator.activityIndicatorViewStyle = .gray
         self.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        services.getAllSeriesAsync(){
+        services.getAllSeriesPageableAsync(pageStart: 1, pageEnd: 25){
             (s) in self.series = (s)
             self.seriesCollectionView.reloadData()
             self.activityIndicator.stopAnimating()

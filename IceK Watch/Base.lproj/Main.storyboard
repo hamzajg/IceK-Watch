@@ -373,10 +373,10 @@
             </objects>
             <point key="canvasLocation" x="-1642" y="3451"/>
         </scene>
-        <!--Item Details View Controller-->
+        <!--Movie View Controller-->
         <scene sceneID="KVa-MH-Q7o">
             <objects>
-                <viewController id="aYf-hl-Vfi" customClass="ItemDetailsViewController" customModule="IceK_Watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aYf-hl-Vfi" customClass="MovieViewController" customModule="IceK_Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Hp-bO-y6b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,7 +394,7 @@
                                                 <rect key="frame" x="104.5" y="59.5" width="150" height="150"/>
                                                 <state key="normal" image="play-btn"/>
                                                 <connections>
-                                                    <action selector="btnPlayClicked:" destination="aYf-hl-Vfi" eventType="touchUpInside" id="kMV-Aw-Sr4"/>
+                                                    <action selector="btnPlayClicked:" destination="aYf-hl-Vfi" eventType="touchUpInside" id="Q75-Vt-woM"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -473,9 +473,9 @@
                         <viewLayoutGuide key="safeArea" id="9cb-UP-GCX"/>
                     </view>
                     <connections>
-                        <outlet property="itemDescTextView" destination="aZJ-F4-UN4" id="Lo6-Jo-0rf"/>
-                        <outlet property="itemImageView" destination="8dr-aX-ceN" id="qda-0F-JTP"/>
-                        <outlet property="itemRatingLabel" destination="Qc9-j1-9a0" id="e0w-xr-dj0"/>
+                        <outlet property="itemDescTextView" destination="aZJ-F4-UN4" id="OeU-fA-8jd"/>
+                        <outlet property="itemImageView" destination="8dr-aX-ceN" id="nce-eD-qbq"/>
+                        <outlet property="itemRatingLabel" destination="Qc9-j1-9a0" id="EBZ-cO-91b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POG-rc-0xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -601,8 +601,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="play-btn"/>
                                                 <connections>
-                                                    <action selector="btnPlayClicked:" destination="aYf-hl-Vfi" eventType="touchUpInside" id="Kj8-q7-pVs"/>
-                                                    <segue destination="lYN-2L-Eiw" kind="show" id="nzT-k9-Yty"/>
+                                                    <segue destination="lYN-2L-Eiw" kind="show" identifier="ShowPartDetails" id="nzT-k9-Yty"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -669,6 +668,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jYj-tZ-o4o"/>
                     </view>
+                    <connections>
+                        <outlet property="itemDescTextView" destination="sbS-wW-P7P" id="xFB-vD-Sou"/>
+                        <outlet property="itemImageView" destination="DGm-el-5Lj" id="wd1-uR-piF"/>
+                        <outlet property="itemRatingLabel" destination="b3N-ag-McR" id="uPU-z4-yfw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykQ-xm-Lor" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1292,7 +1296,7 @@
         <image name="tv-show-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yh2-uk-yJc"/>
+        <segue reference="1yI-mr-geD"/>
         <segue reference="0rS-TY-r8h"/>
     </inferredMetricsTieBreakers>
 </document>
