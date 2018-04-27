@@ -10,26 +10,36 @@ import Foundation
 import UIKit
 class ServicesImpl {
     static let Instance = ServicesImpl()
-    let baseURL = "http://192.168.1.4:8000/"
+    let baseURL = "http://192.168.1.13:8000/"
     fileprivate init() {
     }
     
     func getHomeAsync(completed: @escaping (Home) -> ()){
         var h : Home = Home()
-        //m = HTTP Get All Movies
+        //m = HTTP Get Hone Data
         let urlString = baseURL + "v1/home.php"
         guard let url = URL(string: urlString) else {return}
+        var getRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 60.0)
+        getRequest.httpMethod = "GET"
+        getRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        getRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         URLSession.shared.dataTask(with: url) { (data, response, err) in
-            guard let data = data else {return}
-            do{
-                h = try JSONDecoder().decode(Home.self, from: data)
+            if err != nil {
+                print(err)
                 DispatchQueue.main.async {
                     completed(h)
                 }
-            }catch let jsonErr{
-                print("getAllMoviesAsync Error serializing json: ", jsonErr)
+            } else {
+                guard let data = data else {return}
+                do {
+                    h = try JSONDecoder().decode(Home.self, from: data)
+                    DispatchQueue.main.async {
+                        completed(h)
+                    }
+                }catch let jsonErr{
+                    print("getAllMoviesAsync Error serializing json: ", jsonErr)
+                }
             }
-            
             }.resume()
     }
     func getAllMoviesAsync(completed: @escaping ([Movie]) -> ()){
@@ -48,6 +58,30 @@ class ServicesImpl {
                 print("getAllMoviesAsync Error serializing json: ", jsonErr)
             }
             
+            }.resume()
+    }
+    func getAllMoviesPageableAsync(pageStart: Int , pageEnd: Int, completed: @escaping ([Movie]) -> ()){
+        var m : [Movie] = []
+        //m = HTTP Get All Movies
+        let urlString = baseURL + "v1/movies.php?pageStart=\(pageStart)&pageEnd=\(pageEnd)"
+        guard let url = URL(string: urlString) else {return}
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            if err != nil {
+                print(err)
+                DispatchQueue.main.async {
+                    completed(m)
+                }
+            } else {
+                guard let data = data else {return}
+                do{
+                    m = try JSONDecoder().decode([Movie].self, from: data)
+                    DispatchQueue.main.async {
+                        completed(m)
+                    }
+                }catch let jsonErr{
+                    print("getAllMoviesAsync Error serializing json: ", jsonErr)
+                }
+            }
             }.resume()
     }
     func getAllSeriesAsync(completed: @escaping ([Serie]) -> ()){

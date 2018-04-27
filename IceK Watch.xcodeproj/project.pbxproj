@@ -11,6 +11,8 @@
 		881139662073FDE800C948B8 /* ItemDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139642073FDE800C948B8 /* ItemDetailsViewController.xib */; };
 		881139692073FFB200C948B8 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881139672073FFB200C948B8 /* MediaPlayerViewController.swift */; };
 		8811396A2073FFB200C948B8 /* MediaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139682073FFB200C948B8 /* MediaPlayerViewController.xib */; };
+		8841E8B920933BA2001B931D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841E8B720933BA2001B931D /* ContactViewController.swift */; };
+		8841E8BA20933BA2001B931D /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8841E8B820933BA2001B931D /* ContactViewController.xib */; };
 		8849250D2071616E008DD39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250C2071616E008DD39F /* AppDelegate.swift */; };
 		8849250F2071616E008DD39F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250E2071616E008DD39F /* ViewController.swift */; };
 		884925122071616E008DD39F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884925102071616E008DD39F /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		881139642073FDE800C948B8 /* ItemDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsViewController.xib; sourceTree = "<group>"; };
 		881139672073FFB200C948B8 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		881139682073FFB200C948B8 /* MediaPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaPlayerViewController.xib; sourceTree = "<group>"; };
+		8841E8B720933BA2001B931D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		8841E8B820933BA2001B931D /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		884925092071616E008DD39F /* IceK Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IceK Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8849250C2071616E008DD39F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8849250E2071616E008DD39F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 		8849253A207161D0008DD39F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8841E8B820933BA2001B931D /* ContactViewController.xib */,
 				88737C712083727E00684FE2 /* PartViewController.xib */,
 				8885C0A62077EF9500A313E4 /* SeriesViewController.xib */,
 				8885C0A22077EF7B00A313E4 /* AnimesViewController.xib */,
@@ -222,6 +227,7 @@
 				8885C0A12077EF7B00A313E4 /* AnimesViewController.swift */,
 				8885C0A52077EF9500A313E4 /* SeriesViewController.swift */,
 				88737C702083727E00684FE2 /* PartViewController.swift */,
+				8841E8B720933BA2001B931D /* ContactViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 				88492540207162DA008DD39F /* PlayerView.xib in Resources */,
 				88737C732083727E00684FE2 /* PartViewController.xib in Resources */,
 				88DD968B20769E0700FCB13D /* MoviesViewController.xib in Resources */,
+				8841E8BA20933BA2001B931D /* ContactViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +418,7 @@
 				88737C772083CF9800684FE2 /* Episode.swift in Sources */,
 				8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */,
 				88737C722083727E00684FE2 /* PartViewController.swift in Sources */,
+				8841E8B920933BA2001B931D /* ContactViewController.swift in Sources */,
 				88737C752083CF8900684FE2 /* Part.swift in Sources */,
 				8849254720727ECE008DD39F /* MovieViewController.swift in Sources */,
 				8849254B20727F73008DD39F /* MovieModel.xcdatamodeld in Sources */,
