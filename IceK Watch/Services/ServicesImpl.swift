@@ -123,7 +123,7 @@ class ServicesImpl {
     func getOneSerieBySerieIdAsync(serieId:Int64, completed: @escaping (Serie) -> ()){
         var s : Serie? = nil
         //m = HTTP Get All Movies
-        let urlString = baseURL + "v1/series?id=" + String(serieId)
+        let urlString = baseURL + "v1/series.php?id=" + String(serieId)
         guard let url = URL(string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             guard let data = data else {return}

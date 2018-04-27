@@ -11,6 +11,7 @@
 		881139662073FDE800C948B8 /* ItemDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139642073FDE800C948B8 /* ItemDetailsViewController.xib */; };
 		881139692073FFB200C948B8 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881139672073FFB200C948B8 /* MediaPlayerViewController.swift */; };
 		8811396A2073FFB200C948B8 /* MediaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139682073FFB200C948B8 /* MediaPlayerViewController.xib */; };
+		883B805D2093C11B005F1480 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883B805C2093C11B005F1480 /* EpisodeTableViewCell.swift */; };
 		8841E8B920933BA2001B931D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841E8B720933BA2001B931D /* ContactViewController.swift */; };
 		8841E8BA20933BA2001B931D /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8841E8B820933BA2001B931D /* ContactViewController.xib */; };
 		8849250D2071616E008DD39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250C2071616E008DD39F /* AppDelegate.swift */; };
@@ -23,7 +24,6 @@
 		8849253E207162BE008DD39F /* ListMoviesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849253D207162BE008DD39F /* ListMoviesView.xib */; };
 		88492540207162DA008DD39F /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849253F207162DA008DD39F /* PlayerView.xib */; };
 		88492542207162F0008DD39F /* MovieDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88492541207162F0008DD39F /* MovieDetailsView.xib */; };
-		8849254520722289008DD39F /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254420722289008DD39F /* MovieTableViewCell.swift */; };
 		8849254720727ECE008DD39F /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254620727ECE008DD39F /* MovieViewController.swift */; };
 		8849254B20727F73008DD39F /* MovieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8849254920727F73008DD39F /* MovieModel.xcdatamodeld */; };
 		8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849254C2072803E008DD39F /* MovieTableTableViewController.swift */; };
@@ -71,6 +71,7 @@
 		881139642073FDE800C948B8 /* ItemDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsViewController.xib; sourceTree = "<group>"; };
 		881139672073FFB200C948B8 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		881139682073FFB200C948B8 /* MediaPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaPlayerViewController.xib; sourceTree = "<group>"; };
+		883B805C2093C11B005F1480 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		8841E8B720933BA2001B931D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		8841E8B820933BA2001B931D /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		884925092071616E008DD39F /* IceK Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IceK Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +90,6 @@
 		8849253D207162BE008DD39F /* ListMoviesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListMoviesView.xib; sourceTree = "<group>"; };
 		8849253F207162DA008DD39F /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		88492541207162F0008DD39F /* MovieDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsView.xib; sourceTree = "<group>"; };
-		8849254420722289008DD39F /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		8849254620727ECE008DD39F /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		8849254A20727F73008DD39F /* MovieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieModel.xcdatamodel; sourceTree = "<group>"; };
 		8849254C2072803E008DD39F /* MovieTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableTableViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				8849253D207162BE008DD39F /* ListMoviesView.xib */,
 				8849253F207162DA008DD39F /* PlayerView.xib */,
 				88492541207162F0008DD39F /* MovieDetailsView.xib */,
-				8849254420722289008DD39F /* MovieTableViewCell.swift */,
+				883B805C2093C11B005F1480 /* EpisodeTableViewCell.swift */,
 				88DD968E20769FF900FCB13D /* ItemCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -404,6 +404,7 @@
 				885D9AC82073750900C7225D /* Movie.swift in Sources */,
 				8885C0A32077EF7B00A313E4 /* AnimesViewController.swift in Sources */,
 				88737C6F20836A4300684FE2 /* Home.swift in Sources */,
+				883B805D2093C11B005F1480 /* EpisodeTableViewCell.swift in Sources */,
 				8849250F2071616E008DD39F /* ViewController.swift in Sources */,
 				881139652073FDE800C948B8 /* ItemDetailsViewController.swift in Sources */,
 				88DD968420761BFF00FCB13D /* ServicesImpl.swift in Sources */,
@@ -414,7 +415,6 @@
 				88737C6D208369B100684FE2 /* Slider.swift in Sources */,
 				885D9ACB20738B5B00C7225D /* HomeViewController.swift in Sources */,
 				88DD968A20769E0700FCB13D /* MoviesViewController.swift in Sources */,
-				8849254520722289008DD39F /* MovieTableViewCell.swift in Sources */,
 				88737C772083CF9800684FE2 /* Episode.swift in Sources */,
 				8849254D2072803E008DD39F /* MovieTableTableViewController.swift in Sources */,
 				88737C722083727E00684FE2 /* PartViewController.swift in Sources */,
