@@ -36,7 +36,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         activityIndicator.activityIndicatorViewStyle = .gray
         self.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        services.getAllMoviesPageableAsync(pageStart: 1, pageEnd: 25){
+        services.getAllMoviesPageableAsync(pageStart: 1, pageEnd: 12){
             (m) in self.movies = (m)
             self.moviesCollectionView.reloadData()
             self.activityIndicator.stopAnimating()
@@ -59,7 +59,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "ShowMovieDetails" {
-            if let destination = segue.destination as? ItemDetailsViewController{
+            if let destination = segue.destination as? MovieViewController{
                 let cell = sender as! UICollectionViewCell
                 let indexPath = moviesCollectionView.indexPath(for: cell)
                 let selectedData = movies[(indexPath?.row)!]

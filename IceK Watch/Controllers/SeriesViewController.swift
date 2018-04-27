@@ -24,7 +24,32 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.displaySerieContent(serie: serie)
         return cell
     }
-    
+    func tableView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastElement = series.count - 1
+        print(lastElement)
+        print(indexPath.row)
+        if indexPath.row == lastElement {
+            activityIndicator.startAnimating()
+            services.getAllSeriesPageableAsync(pageStart: series.count - 1, pageEnd: series.count - 1 + 12){
+            (s) in self.series = (s)
+            self.seriesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastElement = series.count - 1
+        print(lastElement)
+        print(indexPath.row)
+        if indexPath.row == lastElement {
+            activityIndicator.startAnimating()
+            services.getAllSeriesPageableAsync(pageStart: series.count - 1, pageEnd: series.count - 1 + 12){
+                (s) in self.series = (s)
+                self.seriesCollectionView.reloadData()
+                self.activityIndicator.stopAnimating()
+            }
+        }
+    }
 
     @IBOutlet weak var seriesCollectionView: UICollectionView!
     override func viewDidLoad() {
@@ -34,7 +59,7 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
         activityIndicator.activityIndicatorViewStyle = .gray
         self.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        services.getAllSeriesPageableAsync(pageStart: 1, pageEnd: 25){
+        services.getAllSeriesPageableAsync(pageStart: 1, pageEnd: 12){
             (s) in self.series = (s)
             self.seriesCollectionView.reloadData()
             self.activityIndicator.stopAnimating()

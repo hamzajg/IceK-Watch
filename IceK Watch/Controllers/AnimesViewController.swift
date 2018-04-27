@@ -33,7 +33,7 @@ class AnimesViewController: UIViewController, UICollectionViewDataSource, UIColl
         activityIndicator.activityIndicatorViewStyle = .gray
         self.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        services.getAllAnimesPageableAsync(pageStart: 1, pageEnd: 25){
+        services.getAllAnimesPageableAsync(pageStart: 1, pageEnd: 12){
             (a) in self.animes = (a)
             self.animesCollectionView.reloadData()
             self.activityIndicator.stopAnimating()

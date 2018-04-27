@@ -19,6 +19,7 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        if movie != nil {
+            self.title = movie?.nom
             let url = URL(string: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             
             if(url != nil) {

@@ -22,6 +22,7 @@ class ItemDetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         if item != nil {
+            self.title = item?.itemTitle
             let url = URL(string: (item?.itemImage.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             
             if(url != nil) {
@@ -37,6 +38,7 @@ class ItemDetailsViewController: UIViewController {
             itemRatingLabel.text?.append(" " + String(item!.itemRating))
             itemDescTextView.text = item?.itemDesc
         } else if movie != nil {
+            self.title = movie?.nom
             let url = URL(string: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             
             if(url != nil) {
@@ -52,6 +54,7 @@ class ItemDetailsViewController: UIViewController {
             itemRatingLabel.text?.append(" " + String(movie!.note))
             itemDescTextView.text = movie?.description
         } else if serie != nil {
+            self.title = serie?.nom
             let url = URL(string: (serie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             
             if(url != nil) {
@@ -67,6 +70,7 @@ class ItemDetailsViewController: UIViewController {
             itemRatingLabel.text?.append(" " + String(serie!.note))
             itemDescTextView.text = serie?.description
         } else if anime != nil {
+            self.title = anime?.nom
             let url = URL(string: (anime?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             
             if(url != nil) {

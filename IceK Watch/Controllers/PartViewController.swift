@@ -45,6 +45,7 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         if(anime != nil) {
+            self.title = anime?.nom
             services.getOneAnimeByAnimeIdAsync(animeId: (anime?.idanime)!){
                 (a) in
                 let anime = (a)
@@ -72,6 +73,7 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         } else if(serie != nil) {
+            self.title = serie?.nom
             services.getOneSerieBySerieIdAsync(serieId: (serie?.idserie)!){
                 (s) in
                 let serie = (s)

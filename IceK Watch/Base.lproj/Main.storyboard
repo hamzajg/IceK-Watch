@@ -786,7 +786,7 @@
                                         <connections>
                                             <outlet property="itemImageView" destination="FKy-uz-xlU" id="Ip2-GV-bFZ"/>
                                             <outlet property="itemTitleLabel" destination="fpY-FK-zGM" id="CjI-Gv-rdI"/>
-                                            <segue destination="aYf-hl-Vfi" kind="show" identifier="ShowSerieDetails" id="HKp-Ot-9LV"/>
+                                            <segue destination="Rvk-l1-XbY" kind="show" identifier="ShowSerieDetails" id="bAp-fk-B8j"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -881,7 +881,7 @@
                                         <connections>
                                             <outlet property="itemImageView" destination="0SO-ae-xn4" id="Msk-L6-n5U"/>
                                             <outlet property="itemTitleLabel" destination="Kb9-DT-zm8" id="Zg3-KS-0hk"/>
-                                            <segue destination="aYf-hl-Vfi" kind="show" identifier="ShowAnimeDetails" id="fZw-5g-WaZ"/>
+                                            <segue destination="Rvk-l1-XbY" kind="show" identifier="ShowAnimeDetails" id="N9X-N2-8Wq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1336,7 +1336,7 @@
         <image name="tv-show-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1yI-mr-geD"/>
+        <segue reference="bAp-fk-B8j"/>
         <segue reference="0rS-TY-r8h"/>
     </inferredMetricsTieBreakers>
 </document>
