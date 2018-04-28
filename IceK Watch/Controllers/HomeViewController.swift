@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var recentMoviesCollectionView: UICollectionView!
     @IBOutlet weak var recentSeriesCollectionView: UICollectionView!
@@ -45,7 +45,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         return cell
     }
-    var contentWidth:CGFloat = 0.0
     @IBOutlet weak var sliderPageControl: UIPageControl!
     @IBOutlet weak var sliderScrollView: UIScrollView!
     override func viewDidLoad() {
@@ -59,23 +58,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             (h) in
             let home = (h)
             self.sliders = home.sliders
-            var xCoordinate:CGFloat = 0.0
             self.sliderPageControl.numberOfPages = self.sliders.count
             if(self.sliders.count > 0) {
-                for s in self.sliders {
-                    print("slider url" + s.url)
+                for i in 0..<self.sliders.count {
+                    let s = self.sliders[i]
                     let url = URL(string: (s.url.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)))
                     
                     if(url != nil) {
                         DispatchQueue.global().async {
                             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                             DispatchQueue.main.async {
-                                let imageToDisplay = UIImage(data: data!)
-                                let imageView = UIImageView(image: imageToDisplay)
-                                self.contentWidth += self.view.frame.width
+                                let imageView = UIImageView(frame: CGRect(x:  self.sliderScrollView.frame.size.width * CGFloat(i), y: 0, width:  self.sliderScrollView.frame.size.width, height:  self.sliderScrollView.frame.size.height))
+                                imageView.image = UIImage(data: data!)
                                 self.sliderScrollView.addSubview(imageView)
-                                imageView.frame = CGRect(x: xCoordinate, y: 0, width: self.sliderScrollView.frame.width, height: self.sliderScrollView.frame.height)
-                                xCoordinate += self.sliderScrollView.frame.width
                             }
                         }
                     } else{
@@ -83,7 +78,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                         let imageView = UIImageView(image: imageToDisplay)
                     }
                 }
-                self.sliderScrollView.contentSize = CGSize(width: self.contentWidth, height: self.view.frame.height)
+                self.sliderScrollView.contentSize = CGSize(width: (self.sliderScrollView.frame.size.width * CGFloat(self.sliders.count)), height: self.sliderScrollView.frame.size.height)
+                self.sliderScrollView.delegate = self
             }
             self.movies = home.movies
             self.series = home.series
@@ -101,6 +97,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     
+    //ScrollView Method
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+        sliderPageControl.numberOfPages = Int(pageNumber)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

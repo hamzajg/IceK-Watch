@@ -1061,9 +1061,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzD-bJ-YPh">
                                         <rect key="frame" x="0.0" y="0.0" width="720" height="230"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="BmL-uq-yq5">
-                                                <rect key="frame" x="0.0" y="8" width="720" height="214"/>
-                                            </imageView>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-PH-Pv2">
+                                                <rect key="frame" x="0.0" y="0.0" width="720" height="230"/>
+                                            </scrollView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="g8z-QY-wKT">
                                                 <rect key="frame" x="340" y="182" width="40" height="40"/>
                                                 <constraints>
@@ -1071,20 +1071,11 @@
                                                     <constraint firstAttribute="height" constant="40" id="H8j-VN-FbF"/>
                                                 </constraints>
                                             </pageControl>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaO-PH-Pv2">
-                                                <rect key="frame" x="0.0" y="0.0" width="720" height="230"/>
-                                            </scrollView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="eaO-PH-Pv2" firstAttribute="leading" secondItem="fzD-bJ-YPh" secondAttribute="leading" id="2Cb-6l-Ewx"/>
-                                            <constraint firstItem="BmL-uq-yq5" firstAttribute="leading" secondItem="eaO-PH-Pv2" secondAttribute="leading" id="2fH-p8-DzV"/>
-                                            <constraint firstItem="BmL-uq-yq5" firstAttribute="centerY" secondItem="eaO-PH-Pv2" secondAttribute="centerY" id="3Dy-MC-ENP"/>
-                                            <constraint firstItem="BmL-uq-yq5" firstAttribute="trailing" secondItem="eaO-PH-Pv2" secondAttribute="trailing" id="5fg-UZ-jEz"/>
                                             <constraint firstAttribute="trailing" secondItem="eaO-PH-Pv2" secondAttribute="trailing" id="HjT-kC-C8I"/>
-                                            <constraint firstItem="BmL-uq-yq5" firstAttribute="leading" secondItem="fzD-bJ-YPh" secondAttribute="leading" id="MhD-Nq-ErI"/>
-                                            <constraint firstAttribute="trailing" secondItem="BmL-uq-yq5" secondAttribute="trailing" id="QUe-2K-vVS"/>
-                                            <constraint firstItem="g8z-QY-wKT" firstAttribute="bottom" secondItem="BmL-uq-yq5" secondAttribute="bottom" id="SXK-Ul-i83"/>
-                                            <constraint firstItem="BmL-uq-yq5" firstAttribute="top" secondItem="fzD-bJ-YPh" secondAttribute="topMargin" id="aLe-Ma-kTW"/>
+                                            <constraint firstItem="g8z-QY-wKT" firstAttribute="bottom" secondItem="fzD-bJ-YPh" secondAttribute="bottomMargin" id="SJ0-vC-utW"/>
                                             <constraint firstAttribute="height" constant="230" id="cOM-81-cVr"/>
                                             <constraint firstItem="eaO-PH-Pv2" firstAttribute="leading" secondItem="fzD-bJ-YPh" secondAttribute="leading" id="dTH-9D-cak"/>
                                             <constraint firstAttribute="trailing" secondItem="eaO-PH-Pv2" secondAttribute="trailing" id="evd-dl-gK3"/>
@@ -1351,7 +1342,6 @@
         <image name="cinema-25" width="25" height="25"/>
         <image name="downloading-25" width="25" height="25"/>
         <image name="play-btn" width="150" height="150"/>
-        <image name="profil" width="512" height="512"/>
         <image name="tv-show-25" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
