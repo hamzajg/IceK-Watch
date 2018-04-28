@@ -69,7 +69,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
                             DispatchQueue.main.async {
                                 let imageView = UIImageView(frame: CGRect(x:  self.sliderScrollView.frame.size.width * CGFloat(i), y: 0, width:  self.sliderScrollView.frame.size.width, height:  self.sliderScrollView.frame.size.height))
-                                imageView.image = UIImage(data: data!)
+                                if data != nil {
+                                    imageView.image = UIImage(data: data!)
+                                } else {
+                                    imageView.image = UIImage(named: "Image")
+                                }
                                 self.sliderScrollView.addSubview(imageView)
                             }
                         }

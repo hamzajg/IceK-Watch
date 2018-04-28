@@ -438,6 +438,11 @@
                                                 <rect key="frame" x="289" y="11" width="50" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button" image="downloading-25"/>
+                                                <connections>
+                                                    <segue destination="kUa-Rl-A0H" kind="popoverPresentation" popoverAnchorView="Xbb-xe-osy" id="Xfa-Ym-hwu">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -482,10 +487,73 @@
             </objects>
             <point key="canvasLocation" x="2237.5999999999999" y="880.20989505247383"/>
         </scene>
-        <!--View Controller-->
+        <!--Download View Controller-->
+        <scene sceneID="vvJ-8A-YII">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="kUa-Rl-A0H" customClass="DownloadViewController" customModule="IceK_Watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xXH-Ff-2x2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8kw-3Q-Zcl">
+                                <rect key="frame" x="58" y="218" width="259" height="231"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-cu-P0p">
+                                        <rect key="frame" x="8" y="62" width="243" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="320p"/>
+                                        <connections>
+                                            <action selector="quality320pButton:" destination="kUa-Rl-A0H" eventType="touchUpInside" id="JUG-Lw-NPv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzh-z2-oAY">
+                                        <rect key="frame" x="8" y="100" width="243" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="480p"/>
+                                        <connections>
+                                            <action selector="quality480pButton:" destination="kUa-Rl-A0H" eventType="touchUpInside" id="aDz-Ry-fqq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uye-y8-M07">
+                                        <rect key="frame" x="8" y="138" width="243" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="720p"/>
+                                        <connections>
+                                            <action selector="quality720pButton:" destination="kUa-Rl-A0H" eventType="touchUpInside" id="AzH-eo-SjV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Quality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cf-c4-pCv">
+                                        <rect key="frame" x="8" y="8" width="243" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2X-QK-1I3">
+                                        <rect key="frame" x="8" y="176" width="243" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="kUa-Rl-A0H" eventType="touchUpInside" id="6Ys-bl-cNM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75473905456852797" green="0.75473905456852797" blue="0.75473905456852797" alpha="0.33272688356164382" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="9sS-dV-Scc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yp-Sa-20i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3119.1999999999998" y="881.10944527736137"/>
+        </scene>
+        <!--Contact View Controller-->
         <scene sceneID="d68-6d-YoB">
             <objects>
-                <viewController id="5Hc-Jp-uc3" sceneMemberID="viewController">
+                <viewController id="5Hc-Jp-uc3" customClass="ContactViewController" customModule="IceK_Watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6o-xF-qje">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

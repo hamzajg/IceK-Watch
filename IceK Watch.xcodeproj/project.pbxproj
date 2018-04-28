@@ -12,6 +12,8 @@
 		881139692073FFB200C948B8 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881139672073FFB200C948B8 /* MediaPlayerViewController.swift */; };
 		8811396A2073FFB200C948B8 /* MediaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139682073FFB200C948B8 /* MediaPlayerViewController.xib */; };
 		883B805D2093C11B005F1480 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883B805C2093C11B005F1480 /* EpisodeTableViewCell.swift */; };
+		883B806020952456005F1480 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883B805E20952456005F1480 /* DownloadViewController.swift */; };
+		883B806120952456005F1480 /* DownloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 883B805F20952456005F1480 /* DownloadViewController.xib */; };
 		8841E8B920933BA2001B931D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8841E8B720933BA2001B931D /* ContactViewController.swift */; };
 		8841E8BA20933BA2001B931D /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8841E8B820933BA2001B931D /* ContactViewController.xib */; };
 		8849250D2071616E008DD39F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849250C2071616E008DD39F /* AppDelegate.swift */; };
@@ -71,6 +73,8 @@
 		881139672073FFB200C948B8 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		881139682073FFB200C948B8 /* MediaPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaPlayerViewController.xib; sourceTree = "<group>"; };
 		883B805C2093C11B005F1480 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		883B805E20952456005F1480 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		883B805F20952456005F1480 /* DownloadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadViewController.xib; sourceTree = "<group>"; };
 		8841E8B720933BA2001B931D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		8841E8B820933BA2001B931D /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		884925092071616E008DD39F /* IceK Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IceK Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +199,7 @@
 		8849253A207161D0008DD39F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				883B805F20952456005F1480 /* DownloadViewController.xib */,
 				8841E8B820933BA2001B931D /* ContactViewController.xib */,
 				88737C712083727E00684FE2 /* PartViewController.xib */,
 				8885C0A62077EF9500A313E4 /* SeriesViewController.xib */,
@@ -225,6 +230,7 @@
 				8885C0A52077EF9500A313E4 /* SeriesViewController.swift */,
 				88737C702083727E00684FE2 /* PartViewController.swift */,
 				8841E8B720933BA2001B931D /* ContactViewController.swift */,
+				883B805E20952456005F1480 /* DownloadViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				8885C0A42077EF7B00A313E4 /* AnimesViewController.xib in Resources */,
 				8811396A2073FFB200C948B8 /* MediaPlayerViewController.xib in Resources */,
 				881139662073FDE800C948B8 /* ItemDetailsViewController.xib in Resources */,
+				883B806120952456005F1480 /* DownloadViewController.xib in Resources */,
 				884925122071616E008DD39F /* Main.storyboard in Resources */,
 				8849253E207162BE008DD39F /* ListMoviesView.xib in Resources */,
 				8885C0A82077EF9500A313E4 /* SeriesViewController.xib in Resources */,
@@ -420,6 +427,7 @@
 				8849254B20727F73008DD39F /* MovieModel.xcdatamodeld in Sources */,
 				88DD968F20769FF900FCB13D /* ItemCollectionViewCell.swift in Sources */,
 				8885C0A72077EF9500A313E4 /* SeriesViewController.swift in Sources */,
+				883B806020952456005F1480 /* DownloadViewController.swift in Sources */,
 				88CC594120829AD900FDBB9B /* Serie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,18 +1,27 @@
 //
-//  ContactViewController.swift
+//  DownloadViewController.swift
 //  IceK Watch
 //
-//  Created by Hamza JGUERIM on 2018-04-27.
+//  Created by Hamza JGUERIM on 2018-04-28.
 //  Copyright © 2018 Hamza JGUERIM. All rights reserved.
 //
 
 import UIKit
 
-class ContactViewController: UIViewController {
+class DownloadViewController: UIViewController {
 
+    @IBAction func quality320pButton(_ sender: UIButton) {
+    }
+    @IBAction func quality480pButton(_ sender: UIButton) {
+    }
+    @IBAction func quality720pButton(_ sender: UIButton) {
+    }
+    @IBAction func cancelButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Contact"
+
         // Do any additional setup after loading the view.
     }
 
