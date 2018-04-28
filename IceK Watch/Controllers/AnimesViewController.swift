@@ -21,9 +21,23 @@ class AnimesViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
         let anime = animes[indexPath.row]
         cell.displayAnimeContent(anime: anime)
+        let lastItem = animes.count - 1
+        if indexPath.row == lastItem {
+            loadMore()
+        }
         return cell
     }
     
+    func loadMore() {
+        activityIndicator.startAnimating()
+        services.getAllAnimesPageableAsync(pageStart: self.animes.count, pageEnd: self.animes.count + 12){
+            (a) in
+            let data = (a)
+            self.animes += data
+            self.animesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
+    }
 
     @IBOutlet weak var animesCollectionView: UICollectionView!
     override func viewDidLoad() {

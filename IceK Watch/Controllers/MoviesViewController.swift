@@ -21,6 +21,10 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
         let movie = movies[indexPath.row]
         cell.displayMovieContent(movie: movie)
+        let lastItem = movies.count - 1
+        if indexPath.row == lastItem {
+            loadMore()
+        }
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
@@ -28,7 +32,17 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         return CGSize(width: collectionView.frame.size.width/3.2, height: 100)
     }
     
-
+    func loadMore() {
+        activityIndicator.startAnimating()
+        services.getAllMoviesPageableAsync(pageStart: self.movies.count, pageEnd: self.movies.count + 12){
+            (m) in
+            let data = (m)
+            self.movies += data
+            self.moviesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.center = self.view.center

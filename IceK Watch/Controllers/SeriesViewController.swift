@@ -22,6 +22,10 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
         let serie = series[indexPath.row]
         cell.displaySerieContent(serie: serie)
+        let lastItem = series.count - 1
+        if indexPath.row == lastItem {
+            loadMore()
+        }
         return cell
     }
     func tableView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -51,6 +55,16 @@ class SeriesViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
     }
 
+    func loadMore() {
+        activityIndicator.startAnimating()
+        services.getAllSeriesPageableAsync(pageStart: self.series.count, pageEnd: self.series.count + 12){
+            (s) in
+            let data = (s)
+            self.series += data
+            self.seriesCollectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
+    }
     @IBOutlet weak var seriesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
