@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var movies : [Movie] = []
     var series : [Serie] = []
     var animes : [Anime] = []
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -44,7 +45,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         return cell
     }
-    
+    var contentWidth:CGFloat = 0.0
+    @IBOutlet weak var sliderPageControl: UIPageControl!
+    @IBOutlet weak var sliderScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.center = self.view.center
@@ -56,6 +59,32 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             (h) in
             let home = (h)
             self.sliders = home.sliders
+            var xCoordinate:CGFloat = 0.0
+            self.sliderPageControl.numberOfPages = self.sliders.count
+            if(self.sliders.count > 0) {
+                for s in self.sliders {
+                    print("slider url" + s.url)
+                    let url = URL(string: (s.url.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)))
+                    
+                    if(url != nil) {
+                        DispatchQueue.global().async {
+                            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                            DispatchQueue.main.async {
+                                let imageToDisplay = UIImage(data: data!)
+                                let imageView = UIImageView(image: imageToDisplay)
+                                self.contentWidth += self.view.frame.width
+                                self.sliderScrollView.addSubview(imageView)
+                                imageView.frame = CGRect(x: xCoordinate, y: 0, width: self.sliderScrollView.frame.width, height: self.sliderScrollView.frame.height)
+                                xCoordinate += self.sliderScrollView.frame.width
+                            }
+                        }
+                    } else{
+                        let imageToDisplay = UIImage(named: "Image")
+                        let imageView = UIImageView(image: imageToDisplay)
+                    }
+                }
+                self.sliderScrollView.contentSize = CGSize(width: self.contentWidth, height: self.view.frame.height)
+            }
             self.movies = home.movies
             self.series = home.series
             self.animes = home.animes
