@@ -599,7 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				DEVELOPMENT_TEAM = FDHPB9G97E;
 				INFOPLIST_FILE = "IceK Watch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-Watch";
@@ -614,7 +614,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QEQ6W7KAJ7;
+				DEVELOPMENT_TEAM = FDHPB9G97E;
 				INFOPLIST_FILE = "IceK Watch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-Watch";
