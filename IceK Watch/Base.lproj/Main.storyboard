@@ -619,8 +619,8 @@
                                             <constraint firstAttribute="height" constant="300" id="rHL-Sc-6I7"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iim-HP-ABF">
-                                        <rect key="frame" x="8" y="308" width="359" height="302"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="145" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iim-HP-ABF">
+                                        <rect key="frame" x="8" y="331" width="359" height="279"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeTableViewCell" rowHeight="145" id="e50-59-moq" customClass="EpisodeTableViewCell" customModule="IceK_Watch" customModuleProvider="target">
@@ -662,6 +662,16 @@
                                             <outlet property="delegate" destination="lYN-2L-Eiw" id="5Zz-mV-G3k"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58f-LN-Ue3">
+                                        <rect key="frame" x="317" y="308" width="50" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="downloading-25"/>
+                                        <connections>
+                                            <segue destination="kUa-Rl-A0H" kind="popoverPresentation" popoverAnchorView="58f-LN-Ue3" id="JEZ-sB-FYs">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dYv-bM-wwk" firstAttribute="top" secondItem="ncR-Wp-AWc" secondAttribute="top" id="6ye-fo-hz3"/>
@@ -673,9 +683,9 @@
                                     <constraint firstAttribute="trailing" secondItem="Iim-HP-ABF" secondAttribute="trailing" constant="8" id="Yaj-St-41Y"/>
                                     <constraint firstItem="dYv-bM-wwk" firstAttribute="centerX" secondItem="ncR-Wp-AWc" secondAttribute="centerX" id="Zzn-eO-s9w"/>
                                     <constraint firstAttribute="bottom" secondItem="Iim-HP-ABF" secondAttribute="bottom" constant="-80" id="azc-Lu-dj7"/>
-                                    <constraint firstItem="Iim-HP-ABF" firstAttribute="top" secondItem="dYv-bM-wwk" secondAttribute="bottom" constant="8" id="bWu-6O-PCe"/>
+                                    <constraint firstItem="Iim-HP-ABF" firstAttribute="top" secondItem="dYv-bM-wwk" secondAttribute="bottom" constant="31" id="bWu-6O-PCe"/>
                                     <constraint firstItem="dYv-bM-wwk" firstAttribute="trailing" secondItem="ncR-Wp-AWc" secondAttribute="trailingMargin" id="cjF-rK-Xzy"/>
-                                    <constraint firstItem="Iim-HP-ABF" firstAttribute="top" secondItem="dYv-bM-wwk" secondAttribute="bottom" constant="8" id="h3H-La-Crg"/>
+                                    <constraint firstItem="Iim-HP-ABF" firstAttribute="top" secondItem="dYv-bM-wwk" secondAttribute="bottom" constant="31" id="h3H-La-Crg"/>
                                     <constraint firstAttribute="trailing" secondItem="dYv-bM-wwk" secondAttribute="trailing" constant="8" id="mnW-0I-c7q"/>
                                     <constraint firstItem="dYv-bM-wwk" firstAttribute="leading" secondItem="ncR-Wp-AWc" secondAttribute="leading" constant="8" id="sW7-tn-8s3"/>
                                     <constraint firstAttribute="trailing" secondItem="Iim-HP-ABF" secondAttribute="trailing" constant="8" id="ux7-fV-tzC"/>
@@ -1430,6 +1440,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yh2-uk-yJc"/>
+        <segue reference="JEZ-sB-FYs"/>
         <segue reference="0rS-TY-r8h"/>
     </inferredMetricsTieBreakers>
 </document>

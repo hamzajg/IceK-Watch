@@ -17,10 +17,11 @@ class EpisodeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func displayEpisodeContent(episode: Episode, imgUrl: String) {
+    func displayEpisodeContent(episode: Episode, imgUrl: String, numPart: Int) {
         episodeImageView.contentMode = .scaleAspectFill
         episodeImageView.downloadedFrom(link: imgUrl.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
-        episodeTitleLabel.text = String(episode.numeroep)
+        episodeTitleLabel.text = "Episode: " + String(episode.numeroep)
+        episodePartLabel.text = "Part: " + String(numPart)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

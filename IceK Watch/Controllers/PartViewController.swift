@@ -25,12 +25,12 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if(anime != nil) {
             if(indexPath.row != -1) {
                 let episode = anime?.parts[(anime?.parts.count)! - 1].episodes[indexPath.row]
-                cell.displayEpisodeContent(episode: episode!, imgUrl: (anime?.img)!)
+                cell.displayEpisodeContent(episode: episode!, imgUrl: (anime?.img)!, numPart: (anime?.parts[(anime?.parts.count)! - 1].numero)!)
             }
         } else if(serie != nil) {
             if(indexPath.row != -1) {
                 let episode = serie?.parts[(serie?.parts.count)! - 1].episodes[indexPath.row]
-                cell.displayEpisodeContent(episode: episode!, imgUrl: (serie?.img)!)
+                cell.displayEpisodeContent(episode: episode!, imgUrl: (serie?.img)!, numPart: (serie?.parts[(serie?.parts.count)! - 1].numero)!)
             }
         }
         return cell
