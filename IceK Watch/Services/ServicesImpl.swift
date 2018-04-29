@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class ServicesImpl {
     static let Instance = ServicesImpl()
-    let baseURL = "http://192.168.1.9:8000/"
+    let baseURL = "https://thephoenix-it.000webhostapp.com/IcekWatch/PHP_APIs/"//"http://192.168.1.9:8000/"
     fileprivate init() {
     }
     

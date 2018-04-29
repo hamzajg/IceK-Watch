@@ -14,30 +14,14 @@ class ItemDetailsViewController: UIViewController {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemRatingLabel: UILabel!
     @IBOutlet weak var itemDescTextView: UITextView!
-    var item: Item?
+    @IBOutlet weak var itemCategoryLabel: UILabel!
     var movie: Movie?
     var serie: Serie?
     var anime: Anime?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if item != nil {
-            self.title = item?.itemTitle
-            let url = URL(string: (item?.itemImage.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
-            
-            if(url != nil) {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    DispatchQueue.main.async {
-                        self.itemImageView.image = UIImage(data: data!)
-                    }
-                }
-            } else{
-                itemImageView.image = UIImage(named: "Image")
-            }
-            itemRatingLabel.text?.append(" " + String(item!.itemRating))
-            itemDescTextView.text = item?.itemDesc
-        } else if movie != nil {
+        if movie != nil {
             self.title = movie?.nom
             let url = URL(string: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             
@@ -52,6 +36,7 @@ class ItemDetailsViewController: UIViewController {
                 itemImageView.image = UIImage(named: "Image")
             }
             itemRatingLabel.text?.append(" " + String(movie!.note))
+            itemCategoryLabel.text = movie?.categorie
             itemDescTextView.text = movie?.description
         } else if serie != nil {
             self.title = serie?.nom
@@ -68,6 +53,7 @@ class ItemDetailsViewController: UIViewController {
                 itemImageView.image = UIImage(named: "Image")
             }
             itemRatingLabel.text?.append(" " + String(serie!.note))
+            itemCategoryLabel.text = serie?.categorie
             itemDescTextView.text = serie?.description
         } else if anime != nil {
             self.title = anime?.nom
@@ -84,6 +70,7 @@ class ItemDetailsViewController: UIViewController {
                 itemImageView.image = UIImage(named: "Image")
             }
             itemRatingLabel.text?.append(" " + String(anime!.note))
+            itemCategoryLabel.text = anime?.categorie
             itemDescTextView.text = anime?.description
         }
     }

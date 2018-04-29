@@ -14,6 +14,7 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemRatingLabel: UILabel!
     @IBOutlet weak var itemDescTextView: UITextView!
+    @IBOutlet weak var itemCategoryLabel: UILabel!
     var movie: Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,9 @@ class MovieViewController: UIViewController {
             } else{
                 itemImageView.image = UIImage(named: "Image")
             }
-            itemRatingLabel.text?.append(" " + String(movie!.note))
-            itemDescTextView.text = movie?.description
+        itemRatingLabel.text?.append(" " + String(movie!.note))
+        itemCategoryLabel.text?.append(" " + String(movie!.categorie))
+        itemDescTextView.text = movie?.description
         }
     }
     
