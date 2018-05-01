@@ -36,7 +36,48 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedIndex = indexPath.row
+        if(anime != nil) {
+            if((anime?.parts.count)! > 0) {
+                let lastPart = anime?.parts[(anime?.parts.count)! - 1]
+                if(lastPart != nil) {
+                    if((lastPart?.episodes.count)! > 0) {
+                        let lastEp = lastPart?.episodes[selectedIndex]
+                        if(lastEp != nil) {
+                            let videoURL = URL(string: (lastEp?.video.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
+                            if(player != nil) {
+                                player.pause()
+                            }
+                            player = AVPlayer(url: videoURL!)
+                            playerController.player = self.player
+                            player.play()
+                        }
+                    }
+                }
+            }
+        } else if(serie != nil) {
+            if((serie?.parts.count)! > 0) {
+                let lastPart = serie?.parts[(serie?.parts.count)! - 1]
+                if(lastPart != nil) {
+                    if((lastPart?.episodes.count)! > 0) {
+                        let lastEp = lastPart?.episodes[selectedIndex]
+                        if(lastEp != nil) {
+                            let videoURL = URL(string: (lastEp?.video.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
+                            if(player != nil) {
+                                player.pause()
+                            }
+                            player = AVPlayer(url: videoURL!)
+                            playerController.player = self.player
+                            player.play()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    var player:AVPlayer = AVPlayer()
+    var playerController = AVPlayerViewController()
     @IBOutlet weak var videoPlayerView: UIView!
     @IBOutlet weak var episodesTableView: UITableView!
     let services = ServicesImpl.Instance
@@ -44,6 +85,9 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var anime: Anime?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addChildViewController(playerController)
+        playerController.view.frame = self.videoPlayerView.bounds
+        self.videoPlayerView.addSubview(playerController.view)
         if(anime != nil) {
             self.title = anime?.nom
             services.getOneAnimeByAnimeIdAsync(animeId: (anime?.idanime)!){
@@ -59,13 +103,9 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                 let lastEp = lastPart.episodes[lastPart.episodes.count - 1]
                                 if(lastEp != nil) {
                                     let videoURL = URL(string: lastEp.video.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
-                                    let player = AVPlayer(url: videoURL!)
-                                    let playerController = AVPlayerViewController()
-                                    playerController.player = player
-                                    self.addChildViewController(playerController)
-                                    playerController.view.frame = self.videoPlayerView.bounds
-                                    self.videoPlayerView.addSubview(playerController.view)
-                                    player.play()
+                                    self.player = AVPlayer(url: videoURL!)
+                                    self.playerController.player = self.player
+                                    self.player.play()
                                 }
                             }
                         }
@@ -77,6 +117,8 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             services.getOneSerieBySerieIdAsync(serieId: (serie?.idserie)!){
                 (s) in
                 let serie = (s)
+                self.serie?.parts = serie.parts
+                self.episodesTableView.reloadData()
                 if(serie != nil) {
                     if(serie.parts.count > 0) {
                         let lastPart = serie.parts[serie.parts.count - 1]
@@ -85,13 +127,9 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                 let lastEp = lastPart.episodes[lastPart.episodes.count - 1]
                                 if(lastEp != nil) {
                                     let videoURL = URL(string: lastEp.video.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))
-                                    let player = AVPlayer(url: videoURL!)
-                                    let playerController = AVPlayerViewController()
-                                    playerController.player = player
-                                    self.addChildViewController(playerController)
-                                    playerController.view.frame = self.videoPlayerView.bounds
-                                    self.videoPlayerView.addSubview(playerController.view)
-                                    player.play()
+                                    self.player = AVPlayer(url: videoURL!)
+                                    self.playerController.player = self.player
+                                    self.player.play()
                                 }
                             }
                         }

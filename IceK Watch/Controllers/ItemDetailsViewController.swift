@@ -23,58 +23,40 @@ class ItemDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         if movie != nil {
             self.title = movie?.nom
-            let url = URL(string: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
-            
-            if(url != nil) {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    DispatchQueue.main.async {
-                        self.itemImageView.image = UIImage(data: data!)
-                    }
-                }
-            } else{
-                itemImageView.image = UIImage(named: "Image")
-            }
+            downloadImageToUIImageView(imageView: itemImageView, urlString: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             itemRatingLabel.text?.append(" " + String(movie!.note))
             itemCategoryLabel.text = movie?.categorie
             itemDescTextView.text = movie?.description
         } else if serie != nil {
             self.title = serie?.nom
-            let url = URL(string: (serie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
-            
-            if(url != nil) {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    DispatchQueue.main.async {
-                        self.itemImageView.image = UIImage(data: data!)
-                    }
-                }
-            } else{
-                itemImageView.image = UIImage(named: "Image")
-            }
+            downloadImageToUIImageView(imageView: itemImageView, urlString: (serie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             itemRatingLabel.text?.append(" " + String(serie!.note))
             itemCategoryLabel.text = serie?.categorie
             itemDescTextView.text = serie?.description
         } else if anime != nil {
             self.title = anime?.nom
-            let url = URL(string: (anime?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
-            
-            if(url != nil) {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    DispatchQueue.main.async {
-                        self.itemImageView.image = UIImage(data: data!)
-                    }
-                }
-            } else{
-                itemImageView.image = UIImage(named: "Image")
-            }
+            downloadImageToUIImageView(imageView: itemImageView, urlString: (anime?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
             itemRatingLabel.text?.append(" " + String(anime!.note))
             itemCategoryLabel.text = anime?.categorie
             itemDescTextView.text = anime?.description
         }
     }
 
+    func downloadImageToUIImageView(imageView: UIImageView, urlString:String) {
+        do {
+            let url = URL(string: urlString)
+            if(url != nil) {
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    DispatchQueue.main.async {
+                        imageView.image = UIImage(data: data!)
+                    }
+                }
+            }
+        } catch {
+            imageView.image = UIImage(named: "image")
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

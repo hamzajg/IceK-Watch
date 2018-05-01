@@ -21,18 +21,7 @@ class MovieViewController: UIViewController {
         // Do any additional setup after loading the view.
        if movie != nil {
             self.title = movie?.nom
-            let url = URL(string: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
-            
-            if(url != nil) {
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    DispatchQueue.main.async {
-                        self.itemImageView.image = UIImage(data: data!)
-                    }
-                }
-            } else{
-                itemImageView.image = UIImage(named: "Image")
-            }
+        downloadImageToUIImageView(imageView: itemImageView, urlString: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
         itemRatingLabel.text?.append(" " + String(movie!.note))
         itemCategoryLabel.text?.append(" " + String(movie!.categorie))
         itemDescTextView.text = movie?.description
@@ -49,6 +38,22 @@ class MovieViewController: UIViewController {
                     video.play()
                 })
             }
+        }
+    }
+    
+    func downloadImageToUIImageView(imageView: UIImageView, urlString:String) {
+        do {
+            let url = URL(string: urlString)
+            if(url != nil) {
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    DispatchQueue.main.async {
+                        imageView.image = UIImage(data: data!)
+                    }
+                }
+            }
+        } catch {
+            imageView.image = UIImage(named: "image")
         }
     }
     override func didReceiveMemoryWarning() {
