@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2C6F5BB9C9CCF40A86BD35 /* Pods_IceK_Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6491F6B4337F9CB6940F8FE0 /* Pods_IceK_Watch.framework */; };
 		881139652073FDE800C948B8 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881139632073FDE800C948B8 /* ItemDetailsViewController.swift */; };
 		881139662073FDE800C948B8 /* ItemDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881139642073FDE800C948B8 /* ItemDetailsViewController.xib */; };
 		881139692073FFB200C948B8 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881139672073FFB200C948B8 /* MediaPlayerViewController.swift */; };
@@ -48,6 +49,8 @@
 		88DD968A20769E0700FCB13D /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD968820769E0700FCB13D /* MoviesViewController.swift */; };
 		88DD968B20769E0700FCB13D /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88DD968920769E0700FCB13D /* MoviesViewController.xib */; };
 		88DD968F20769FF900FCB13D /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD968E20769FF900FCB13D /* ItemCollectionViewCell.swift */; };
+		9CE8AFCB26DB334065645786 /* Pods_IceK_WatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D8398A18A1B5996EF8211E /* Pods_IceK_WatchTests.framework */; };
+		BBD3C59439E5E09108A59442 /* Pods_IceK_WatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7600A16707ED1D1A0674077 /* Pods_IceK_WatchUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18D8398A18A1B5996EF8211E /* Pods_IceK_WatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IceK_WatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F0BF586D8B010D64F16F803 /* Pods-IceK WatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceK WatchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IceK WatchTests/Pods-IceK WatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		6491F6B4337F9CB6940F8FE0 /* Pods_IceK_Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IceK_Watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F5713D6A21635197F76748 /* Pods-IceK WatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceK WatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IceK WatchTests/Pods-IceK WatchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7999F9BA97490ACCF9139E1B /* Pods-IceK WatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceK WatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IceK WatchUITests/Pods-IceK WatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		881139632073FDE800C948B8 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		881139642073FDE800C948B8 /* ItemDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsViewController.xib; sourceTree = "<group>"; };
 		881139672073FFB200C948B8 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +106,16 @@
 		885D9AC72073750900C7225D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		885D9AC920738B5B00C7225D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		885D9ACA20738B5B00C7225D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		8864007A2098CDC1008B1D64 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		8864007C2098CDCE008B1D64 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8864007E2098CDDB008B1D64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		886400802098CDE4008B1D64 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		886400822098CDF2008B1D64 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		886400842098CDFD008B1D64 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		886400862098CE05008B1D64 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		886400882098CE12008B1D64 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8864008A2098CE1A008B1D64 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8864008C2098CE2A008B1D64 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		88737C6C208369B100684FE2 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		88737C6E20836A4300684FE2 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		88737C702083727E00684FE2 /* PartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +133,10 @@
 		88DD968820769E0700FCB13D /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		88DD968920769E0700FCB13D /* MoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
 		88DD968E20769FF900FCB13D /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		9210A91A853CE9609A80F395 /* Pods-IceK WatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceK WatchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IceK WatchUITests/Pods-IceK WatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A40168213542997A1CCCD667 /* Pods-IceK Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceK Watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-IceK Watch/Pods-IceK Watch.release.xcconfig"; sourceTree = "<group>"; };
+		A7600A16707ED1D1A0674077 /* Pods_IceK_WatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IceK_WatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE03B24456365BD992C0959D /* Pods-IceK Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceK Watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IceK Watch/Pods-IceK Watch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C2C6F5BB9C9CCF40A86BD35 /* Pods_IceK_Watch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE8AFCB26DB334065645786 /* Pods_IceK_WatchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,12 +160,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD3C59439E5E09108A59442 /* Pods_IceK_WatchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		007E17388B1521B743FD57AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8864008C2098CE2A008B1D64 /* libz.tbd */,
+				8864008A2098CE1A008B1D64 /* WebKit.framework */,
+				886400882098CE12008B1D64 /* AVFoundation.framework */,
+				886400862098CE05008B1D64 /* CoreMedia.framework */,
+				886400842098CDFD008B1D64 /* QuartzCore.framework */,
+				886400822098CDF2008B1D64 /* AdSupport.framework */,
+				886400802098CDE4008B1D64 /* StoreKit.framework */,
+				8864007E2098CDDB008B1D64 /* CoreGraphics.framework */,
+				8864007C2098CDCE008B1D64 /* SystemConfiguration.framework */,
+				8864007A2098CDC1008B1D64 /* CoreTelephony.framework */,
+				6491F6B4337F9CB6940F8FE0 /* Pods_IceK_Watch.framework */,
+				18D8398A18A1B5996EF8211E /* Pods_IceK_WatchTests.framework */,
+				A7600A16707ED1D1A0674077 /* Pods_IceK_WatchUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		884925002071616E008DD39F = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +194,8 @@
 				884925202071616E008DD39F /* IceK WatchTests */,
 				8849252B2071616E008DD39F /* IceK WatchUITests */,
 				8849250A2071616E008DD39F /* Products */,
+				987AD9FBA192A58EA7C214B3 /* Pods */,
+				007E17388B1521B743FD57AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +306,19 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		987AD9FBA192A58EA7C214B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE03B24456365BD992C0959D /* Pods-IceK Watch.debug.xcconfig */,
+				A40168213542997A1CCCD667 /* Pods-IceK Watch.release.xcconfig */,
+				69F5713D6A21635197F76748 /* Pods-IceK WatchTests.debug.xcconfig */,
+				2F0BF586D8B010D64F16F803 /* Pods-IceK WatchTests.release.xcconfig */,
+				7999F9BA97490ACCF9139E1B /* Pods-IceK WatchUITests.debug.xcconfig */,
+				9210A91A853CE9609A80F395 /* Pods-IceK WatchUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,9 +326,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 884925312071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK Watch" */;
 			buildPhases = (
+				56006E2706AD722BD29B74F5 /* [CP] Check Pods Manifest.lock */,
 				884925052071616E008DD39F /* Sources */,
 				884925062071616E008DD39F /* Frameworks */,
 				884925072071616E008DD39F /* Resources */,
+				1597399FF22EE9C6A65204D3 /* [CP] Copy Pods Resources */,
+				196D8DE4837D1C8DE217C7C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,6 +346,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 884925342071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK WatchTests" */;
 			buildPhases = (
+				6727442BA110ADFE25F66FA9 /* [CP] Check Pods Manifest.lock */,
 				884925192071616E008DD39F /* Sources */,
 				8849251A2071616E008DD39F /* Frameworks */,
 				8849251B2071616E008DD39F /* Resources */,
@@ -301,6 +365,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 884925372071616E008DD39F /* Build configuration list for PBXNativeTarget "IceK WatchUITests" */;
 			buildPhases = (
+				A55EBC1E3B572D5F10F49D75 /* [CP] Check Pods Manifest.lock */,
 				884925242071616E008DD39F /* Sources */,
 				884925252071616E008DD39F /* Frameworks */,
 				884925262071616E008DD39F /* Resources */,
@@ -399,6 +464,101 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1597399FF22EE9C6A65204D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IceK Watch/Pods-IceK Watch-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IceK Watch/Pods-IceK Watch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		196D8DE4837D1C8DE217C7C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IceK Watch/Pods-IceK Watch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IceK Watch/Pods-IceK Watch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56006E2706AD722BD29B74F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IceK Watch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6727442BA110ADFE25F66FA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IceK WatchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55EBC1E3B572D5F10F49D75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IceK WatchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		884925052071616E008DD39F /* Sources */ = {
@@ -536,6 +696,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-Iz",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -588,6 +752,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-Iz",
+					"-ObjC",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -596,12 +764,24 @@
 		};
 		884925322071616E008DD39F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE03B24456365BD992C0959D /* Pods-IceK Watch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FDHPB9G97E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/StartAppSDK",
+				);
 				INFOPLIST_FILE = "IceK Watch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"-liconv",
+					"-Iz",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -611,12 +791,24 @@
 		};
 		884925332071616E008DD39F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A40168213542997A1CCCD667 /* Pods-IceK Watch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FDHPB9G97E;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/StartAppSDK",
+				);
 				INFOPLIST_FILE = "IceK Watch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"-liconv",
+					"-Iz",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hamzajg.IceK-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -626,6 +818,7 @@
 		};
 		884925352071616E008DD39F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69F5713D6A21635197F76748 /* Pods-IceK WatchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -643,6 +836,7 @@
 		};
 		884925362071616E008DD39F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F0BF586D8B010D64F16F803 /* Pods-IceK WatchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -660,6 +854,7 @@
 		};
 		884925382071616E008DD39F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7999F9BA97490ACCF9139E1B /* Pods-IceK WatchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -676,6 +871,7 @@
 		};
 		884925392071616E008DD39F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9210A91A853CE9609A80F395 /* Pods-IceK WatchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

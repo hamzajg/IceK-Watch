@@ -18,9 +18,11 @@ class ItemDetailsViewController: UIViewController {
     var movie: Movie?
     var serie: Serie?
     var anime: Anime?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
         if movie != nil {
             self.title = movie?.nom
             downloadImageToUIImageView(imageView: itemImageView, urlString: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
@@ -61,7 +63,6 @@ class ItemDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     
     // MARK: - Navigation

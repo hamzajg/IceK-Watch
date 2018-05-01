@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        Alamofire.request(url).responseImage { response in
+            
+            if let image = response.result.value {
+                self.image = image
+            }
+        }
+        /*URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
@@ -20,7 +29,7 @@ extension UIImageView {
             DispatchQueue.main.async() {
                 self.image = image
             }
-            }.resume()
+            }.resume()*/
     }
     func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
