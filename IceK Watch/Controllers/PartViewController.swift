@@ -8,8 +8,12 @@
 
 import UIKit
 import AVKit
+import GoogleMobileAds
 
-class PartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+
+class PartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var bannerView: GADBannerView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(anime != nil) {
             return (anime?.parts.count)! > 0 ? (anime?.parts[(anime?.parts.count)! - 1].episodes.count)! : 0
@@ -137,7 +141,35 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = "ca-app-pub-4599577559313460/8811316092"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         // Do any additional setup after loading the view.
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@ target 'IceK Watch' do
 
   # Pods for IceK Watch
     pod 'StartAppSDK'
+    pod 'Google-Mobile-Ads-SDK'
     pod 'AlamofireImage', '~> 3.3'
 
   target 'IceK WatchTests' do

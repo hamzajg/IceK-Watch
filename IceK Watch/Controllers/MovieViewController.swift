@@ -8,17 +8,20 @@
 
 import UIKit
 import AVKit
+import GoogleMobileAds
 
-class MovieViewController: UIViewController {
+class MovieViewController: UIViewController, GADInterstitialDelegate{
 
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemRatingLabel: UILabel!
     @IBOutlet weak var itemDescTextView: UITextView!
     @IBOutlet weak var itemCategoryLabel: UILabel!
+    var interstitial: GADInterstitial!
     var movie: Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        interstitial = createAndLoadInterstitial()
        if movie != nil {
             self.title = movie?.nom
         downloadImageToUIImageView(imageView: itemImageView, urlString: (movie?.img.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil))!)
@@ -28,6 +31,16 @@ class MovieViewController: UIViewController {
         }
     }
     
+    func createAndLoadInterstitial() -> GADInterstitial {
+        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-4599577559313460/1320958444")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
+    }
     @IBAction func btnPlayClicked(_ sender: UIButton) {
         if(movie != nil) {
             if let url = NSURL(string: movie!.video.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)) {
