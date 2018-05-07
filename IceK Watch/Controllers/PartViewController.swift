@@ -11,9 +11,10 @@ import AVKit
 import GoogleMobileAds
 
 
-class PartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
     
-    var bannerView: GADBannerView!
+    // Ad banner and interstitial views
+    var adMobBannerView = GADBannerView()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(anime != nil) {
             return (anime?.parts.count)! > 0 ? (anime?.parts[(anime?.parts.count)! - 1].episodes.count)! : 0
@@ -141,41 +142,64 @@ class PartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }
-        
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        
-        addBannerViewToView(bannerView)
-        bannerView.adUnitID = "ca-app-pub-4599577559313460/8811316092"
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        // Init AdMob banner
+        initAdMobBanner()
         // Do any additional setup after loading the view.
     }
     
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
+    // MARK: -  ADMOB BANNER
+    func initAdMobBanner() {
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            // iPhone
+            adMobBannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 50))
+            adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 320, height: 50)
+        } else  {
+            // iPad
+            adMobBannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 468, height: 60))
+            adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 468, height: 60)
+        }
+        
+        adMobBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        adMobBannerView.rootViewController = self
+        adMobBannerView.delegate = self
+        view.addSubview(adMobBannerView)
+        
+        let request = GADRequest()
+        adMobBannerView.load(request)
     }
-
+    
+    
+    // Hide the banner
+    func hideBanner(_ banner: UIView) {
+        UIView.beginAnimations("hideBanner", context: nil)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: view.frame.size.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
+        UIView.commitAnimations()
+        banner.isHidden = true
+    }
+    
+    // Show the banner
+    func showBanner(_ banner: UIView) {
+        UIView.beginAnimations("showBanner", context: nil)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: (view.frame.size.height - banner.frame.size.height) - 55, width: banner.frame.size.width, height: banner.frame.size.height)
+        UIView.commitAnimations()
+        banner.isHidden = false
+    }
+    
+    // AdMob banner available
+    func adViewDidReceiveAd(_ view: GADBannerView!) {
+        showBanner(adMobBannerView)
+    }
+    
+    // NO AdMob banner available
+    func adView(_ view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        hideBanner(adMobBannerView)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
 
     /*

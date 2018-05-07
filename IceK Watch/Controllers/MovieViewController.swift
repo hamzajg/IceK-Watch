@@ -10,7 +10,10 @@ import UIKit
 import AVKit
 import GoogleMobileAds
 
-class MovieViewController: UIViewController, GADInterstitialDelegate{
+class MovieViewController: UIViewController, GADInterstitialDelegate, GADBannerViewDelegate, UIAlertViewDelegate {
+    
+    // Ad banner and interstitial views
+    var adMobBannerView = GADBannerView()
 
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemRatingLabel: UILabel!
@@ -29,15 +32,76 @@ class MovieViewController: UIViewController, GADInterstitialDelegate{
         itemCategoryLabel.text?.append(" " + String(movie!.categorie))
         itemDescTextView.text = movie?.description
         }
+        // Init AdMob banner
+        initAdMobBanner()
+        // Do any additional setup after loading the view.
+    }
+    // MARK: -  ADMOB BANNER
+    func initAdMobBanner() {
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            // iPhone
+            adMobBannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 50))
+            adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 320, height: 50)
+        } else  {
+            // iPad
+            adMobBannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 468, height: 60))
+            adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 468, height: 60)
+        }
+        
+        adMobBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        adMobBannerView.rootViewController = self
+        adMobBannerView.delegate = self
+        view.addSubview(adMobBannerView)
+        
+        let request = GADRequest()
+        adMobBannerView.load(request)
     }
     
+    
+    // Hide the banner
+    func hideBanner(_ banner: UIView) {
+        UIView.beginAnimations("hideBanner", context: nil)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: view.frame.size.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
+        UIView.commitAnimations()
+        banner.isHidden = true
+    }
+    
+    // Show the banner
+    func showBanner(_ banner: UIView) {
+        UIView.beginAnimations("showBanner", context: nil)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: (view.frame.size.height - banner.frame.size.height) - 55, width: banner.frame.size.width, height: banner.frame.size.height)
+        UIView.commitAnimations()
+        banner.isHidden = false
+    }
+    
+    // AdMob banner available
+    func adViewDidReceiveAd(_ view: GADBannerView!) {
+        showBanner(adMobBannerView)
+    }
+    
+    // NO AdMob banner available
+    func adView(_ view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        hideBanner(adMobBannerView)
+    }
     func createAndLoadInterstitial() -> GADInterstitial {
-        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-4599577559313460/1320958444")
+        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
     }
+    var lastTimeInterval:TimeInterval? = nil
+    func interstitialDidReceiveAd(_ ad: GADInterstitial!) {
+        if(lastTimeInterval == nil || (Date().timeIntervalSinceNow - lastTimeInterval!) > 250.0) {
+            print("Interstitial loaded successfully")
+            ad.present(fromRootViewController: self)
+            lastTimeInterval = Date().timeIntervalSinceNow
+        }
+    }
     
+    func interstitialDidFail(toPresentScreen ad: GADInterstitial!) {
+        print("Fail to receive interstitial")
+    }
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         interstitial = createAndLoadInterstitial()
     }
@@ -50,6 +114,7 @@ class MovieViewController: UIViewController, GADInterstitialDelegate{
                 present(videoPlayer, animated: true, completion: {
                     video.play()
                 })
+                self.interstitial.present(fromRootViewController: (videoPlayer.presentationController?.presentingViewController)!)
             }
         }
     }
