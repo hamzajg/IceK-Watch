@@ -35,7 +35,7 @@ class AdsTestViewController: UIViewController, GADBannerViewDelegate {
             adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 468, height: 60)
         }
         
-        adMobBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        adMobBannerView.adUnitID = "ca-app-pub-4599577559313460/5202355526"
         adMobBannerView.rootViewController = self
         adMobBannerView.delegate = self
         view.addSubview(adMobBannerView)
@@ -56,7 +56,7 @@ class AdsTestViewController: UIViewController, GADBannerViewDelegate {
     // Show the banner
     func showBanner(_ banner: UIView) {
         UIView.beginAnimations("showBanner", context: nil)
-        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: view.frame.size.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: (view.frame.size.height - banner.frame.size.height) - 55, width: banner.frame.size.width, height: banner.frame.size.height)
         UIView.commitAnimations()
         banner.isHidden = false
     }
@@ -69,28 +69,6 @@ class AdsTestViewController: UIViewController, GADBannerViewDelegate {
     // NO AdMob banner available
     func adView(_ view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
         hideBanner(adMobBannerView)
-    }
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        adsView.frame = bannerView.frame
-        adsView = bannerView
-//        adsView.addSubview(bannerView)
-//        adsView.addConstraints(
-//            [NSLayoutConstraint(item: bannerView,
-//                                attribute: .bottom,
-//                                relatedBy: .equal,
-//                                toItem: adsView.safeAreaLayoutGuide.bottomAnchor,
-//                                attribute: .top,
-//                                multiplier: 1,
-//                                constant: 0),
-//             NSLayoutConstraint(item: bannerView,
-//                                attribute: .centerX,
-//                                relatedBy: .equal,
-//                                toItem: adsView,
-//                                attribute: .centerX,
-//                                multiplier: 1,
-//                                constant: 0)
-//            ])
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

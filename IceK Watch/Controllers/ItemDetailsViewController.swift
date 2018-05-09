@@ -78,7 +78,7 @@ class ItemDetailsViewController: UIViewController, GADBannerViewDelegate {
             adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 468, height: 60)
         }
         
-        adMobBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        adMobBannerView.adUnitID = "ca-app-pub-4599577559313460/5202355526"
         adMobBannerView.rootViewController = self
         adMobBannerView.delegate = self
         view.addSubview(adMobBannerView)
