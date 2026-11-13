@@ -29,10 +29,10 @@ Podfile
 
 ## Building
 
-Open `IceK Watch.xcworkspace` in Xcode, or install pods first:
+Open `IceK Watch.xcworkspace` in Xcode, or install pods first (from the
+repository root — the `Podfile` and the workspace are both at the top level):
 
 ```bash
-cd IceK-Watch
 pod install
 open "IceK Watch.xcworkspace"
 ```
